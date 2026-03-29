@@ -1,19 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-SPYDER: Paper-ready figure (2x2)
-✅ Burned = solid bars
-✅ Unburned = hatched bars
-✅ Robust Excel column matching (fixes "bars not showing")
-✅ Times New Roman everywhere
-✅ Tkinter selects Alberta / BC / Saskatchewan files + output folder
-
-Expected Excel format (first sheet):
-  metric | (model columns...)
-Rows include:
-  precision_burned, recall_burned, iou_burned, f1_burned
-  precision_unburned, recall_unburned, iou_unburned, f1_unburned
-"""
-
 import os
 import re
 import numpy as np
@@ -23,8 +7,6 @@ import matplotlib.pyplot as plt
 import tkinter as tk
 from tkinter import filedialog, messagebox, simpledialog
 
-
-# ----------------------------- Tkinter helpers -----------------------------
 _TK = None
 def _root():
     global _TK
@@ -83,16 +65,12 @@ def cleanup_tk():
         pass
     _TK = None
 
-
-# ----------------------------- Normalization helpers -----------------------------
 def _norm(s):
-    """Aggressive normalize for matching: remove spaces, dashes, underscores, dots; lowercase."""
     s = str(s).strip().lower()
     s = re.sub(r"\s+", "", s)
     s = s.replace("-", "").replace("_", "").replace(".", "")
     return s
 
-# ✅ Your EXACT model names (canonical)
 MODEL_ORDER = [
     "DeepLabV3-ResNet50",
     "Mask2Former",
@@ -101,7 +79,6 @@ MODEL_ORDER = [
     "UNet-ResNet50",
 ]
 
-# Aliases (handles messy Excel headers)
 MODEL_ALIASES = {
     "DeepLabV3-ResNet50": [
         "deeplabv3-resnet34", "deeplabv3resnet34", "deeplabv3_resnet34",
@@ -125,27 +102,20 @@ MODEL_ALIASES = {
 }
 
 def standardize_model_columns(df, file_label=""):
-    """
-    Renames df columns to canonical model names using MODEL_ALIASES.
-    Raises a clear error if any canonical model cannot be found.
-    """
-    col_map = {}  # original_col -> canonical
+    col_map = {}
     norm_cols = {_norm(c): c for c in df.columns}
 
     for canonical, aliases in MODEL_ALIASES.items():
         found = None
 
-        # 1) exact canonical match
         if _norm(canonical) in norm_cols:
             found = norm_cols[_norm(canonical)]
         else:
-            # 2) alias exact match
             for a in aliases:
                 if _norm(a) in norm_cols:
                     found = norm_cols[_norm(a)]
                     break
 
-            # 3) substring fallback
             if found is None:
                 for nc, orig in norm_cols.items():
                     if any(_norm(a) in nc for a in aliases):
@@ -169,8 +139,6 @@ def standardize_model_columns(df, file_label=""):
 
     return df2
 
-
-# ----------------------------- Read Excel -----------------------------
 def read_metrics_wide_excel(path):
     df = pd.read_excel(path, sheet_name=0)
 
@@ -191,7 +159,6 @@ def read_metrics_wide_excel(path):
         df[c] = pd.to_numeric(df[c], errors="coerce")
     df = df.dropna(axis=1, how="all")
 
-    # ✅ fix bars-not-showing: normalize model columns
     df = standardize_model_columns(df, file_label=os.path.basename(path))
     return df
 
@@ -204,18 +171,15 @@ def get_row(df, key):
         )
     return df.loc[k]
 
-
-# ----------------------------- Plotting -----------------------------
 def plot_like_sample_improved(dfs, provinces, out_png, out_pdf, dpi=600):
     plt.rcParams["font.family"] = "Times New Roman"
 
-    # Model colors (distinct)
     colors = {
-        "DeepLabV3-ResNet50": "#1f77b4",  # blue
-        "Mask2Former":        "#ff7f0e",  # orange
-        "PSPNet-ResNet50":    "#2ca02c",  # green
-        "SamLoRA-ViTB":       "#d62728",  # red
-        "UNet-ResNet50":      "#9467bd",  # purple
+        "DeepLabV3-ResNet50": "#1f77b4",
+        "Mask2Former": "#ff7f0e",
+        "PSPNet-ResNet50": "#2ca02c",
+        "SamLoRA-ViTB": "#d62728",
+        "UNet-ResNet50": "#9467bd",
     }
 
     metrics = [
@@ -229,21 +193,20 @@ def plot_like_sample_improved(dfs, provinces, out_png, out_pdf, dpi=600):
     n_mod = len(MODEL_ORDER)
     x = np.arange(n_prov)
 
-    # Paired bars layout per model within province
     group_span = 0.90
-    total_slots = (2 * n_mod) + (n_mod - 1)  # bars + gap slots
+    total_slots = (2 * n_mod) + (n_mod - 1)
     slot_w = group_span / total_slots
     bar_w = slot_w * 0.95
 
     offsets = []
     cur = -(group_span / 2.0) + slot_w / 2.0
     for j in range(n_mod):
-        offsets.append(cur)     # burned
+        offsets.append(cur)
         cur += slot_w
-        offsets.append(cur)     # unburned
+        offsets.append(cur)
         cur += slot_w
         if j < n_mod - 1:
-            cur += slot_w       # gap
+            cur += slot_w
     offsets = np.array(offsets, dtype=float)
 
     fig, axes = plt.subplots(2, 2, figsize=(18, 11))
@@ -258,9 +221,7 @@ def plot_like_sample_improved(dfs, provinces, out_png, out_pdf, dpi=600):
         ax.set_ylim(0, 1.0)
         ax.set_yticks(yticks)
         ax.tick_params(axis="y", labelsize=12)
-
         ax.grid(True, axis="y", linestyle="--", linewidth=1.0, alpha=0.38)
-
         ax.spines["top"].set_visible(False)
         ax.spines["right"].set_visible(False)
         ax.spines["left"].set_linewidth(1.2)
@@ -295,7 +256,6 @@ def plot_like_sample_improved(dfs, provinces, out_png, out_pdf, dpi=600):
         for s in range(n_prov - 1):
             ax.axvline(s + 0.5, color="0.85", linewidth=0.8, zorder=0)
 
-    # Legend
     import matplotlib.patches as mpatches
     model_patches = [mpatches.Patch(facecolor=colors[m], edgecolor="black", label=m) for m in MODEL_ORDER]
     burned_patch = mpatches.Patch(facecolor="white", edgecolor="black", label="Burned = solid")
@@ -311,8 +271,6 @@ def plot_like_sample_improved(dfs, provinces, out_png, out_pdf, dpi=600):
     fig.savefig(out_pdf, dpi=dpi, bbox_inches="tight")
     plt.close(fig)
 
-
-# ----------------------------- Main -----------------------------
 def main():
     try:
         f_ab = pick_excel_file("Select Alberta metrics Excel")
