@@ -1,18 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb 18 07:45:38 2026
-
-@author: saadz
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Multi-model training curves plotter (5 rows, single frame)
-- Reads: CSV, JSON (dict/list), JSONL (mmengine log.json)
-- Single legend at top
-- Times New Roman, font size 12 everywhere (labels, ticks, titles, legend)
-"""
-
 import os
 import json
 import numpy as np
@@ -21,7 +6,6 @@ import matplotlib.pyplot as plt
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
-# ------------------------- Global Styling (ALL = 12) -------------------------
 BASE_FONT = 16
 plt.rcParams.update({
     "font.family": "Times New Roman",
@@ -34,16 +18,14 @@ plt.rcParams.update({
     "figure.titlesize": BASE_FONT,
 })
 
-# solid, distinctive colors
-COL_TRAIN = "#0057D9"   # blue
-COL_VAL   = "#6A00FF"   # purple
-COL_DICE  = "#0A8F3D"   # green
+COL_TRAIN = "#0057D9"
+COL_VAL = "#6A00FF"
+COL_DICE = "#0A8F3D"
 
 LW_TRAIN = 1.6
-LW_VAL   = 1.6
-LW_DICE  = 2.0
+LW_VAL = 1.6
+LW_DICE = 2.0
 
-# ------------------------- Helpers -------------------------
 def _norm_key(k: str) -> str:
     return str(k).strip().lower().replace(" ", "").replace("-", "").replace(".", "").replace("/", "").replace("\\", "")
 
@@ -97,7 +79,6 @@ def _align_lengths(h):
         out[k] = v[:m] if v is not None else None
     return out
 
-# ------------------------- Parse dataframe -------------------------
 def parse_from_dataframe(df: pd.DataFrame, source_label="DATA"):
     if df is None or df.empty:
         raise ValueError(f"[{source_label}] Empty dataframe.")
@@ -106,19 +87,18 @@ def parse_from_dataframe(df: pd.DataFrame, source_label="DATA"):
     epochs = np.arange(1, len(df) + 1) if epoch_col is None else _to_float_array(df[epoch_col].values)
 
     train_loss_col = _find_col(df.columns, ["training_loss", "train_loss", "loss", "trainingloss", "trainloss"])
-    val_loss_col   = _find_col(df.columns, ["validation_loss", "val_loss", "valid_loss", "valloss"])
-    dice_col       = _find_col(df.columns, ["Dice", "dice", "dice_score", "DiceScore", "val_dice", "mDice", "MeanDice", "dice_coef"])
+    val_loss_col = _find_col(df.columns, ["validation_loss", "val_loss", "valid_loss", "valloss"])
+    dice_col = _find_col(df.columns, ["Dice", "dice", "dice_score", "DiceScore", "val_dice", "mDice", "MeanDice", "dice_coef"])
 
     train_loss = _to_float_array(df[train_loss_col].values) if train_loss_col else None
-    val_loss   = _to_float_array(df[val_loss_col].values) if val_loss_col else None
-    dice       = _to_float_array(df[dice_col].values) if dice_col else None
+    val_loss = _to_float_array(df[val_loss_col].values) if val_loss_col else None
+    dice = _to_float_array(df[dice_col].values) if dice_col else None
 
     if train_loss is None and val_loss is None and dice is None:
         raise ValueError(f"[{source_label}] Could not detect metrics.\nColumns found: {list(df.columns)}")
 
     return {"epochs": epochs, "train_loss": train_loss, "val_loss": val_loss, "dice": dice}
 
-# ------------------------- Load any history file -------------------------
 def load_history_any(path):
     ext = os.path.splitext(path)[1].lower()
 
@@ -130,14 +110,12 @@ def load_history_any(path):
         return parse_from_dataframe(df, source_label="CSV")
 
     if ext == ".json":
-        # Try normal JSON
         try:
             with open(path, "r", encoding="utf-8", errors="replace") as f:
                 obj = json.load(f)
         except Exception:
             obj = None
 
-        # JSONL fallback (mmengine log.json)
         if obj is None:
             records = []
             with open(path, "r", encoding="utf-8", errors="replace") as f:
@@ -156,12 +134,10 @@ def load_history_any(path):
             preview = _read_first_lines(path, 25)
             raise ValueError("[JSON] Failed to parse JSON or JSONL.\n\nFIRST LINES:\n" + preview)
 
-        # JSON list-of-dicts
         if isinstance(obj, list):
             df = pd.DataFrame([r for r in obj if isinstance(r, dict)])
             return parse_from_dataframe(df, source_label="JSON_LIST")
 
-        # JSON dict with embedded list-of-dicts
         if isinstance(obj, dict):
             for key in ["training_validation_loss_per_epoch", "history", "log_history", "logs", "data"]:
                 if key in obj and isinstance(obj[key], list) and obj[key] and isinstance(obj[key][0], dict):
@@ -181,7 +157,6 @@ def load_history_any(path):
 
     raise ValueError(f"Unsupported file type: {ext}")
 
-# ------------------------- UI -------------------------
 def ask_file_for_model(model_name):
     messagebox.showinfo(
         "Select history/log file",
@@ -205,7 +180,6 @@ def ask_save_path():
         filetypes=[("PNG", "*.png"), ("PDF", "*.pdf"), ("SVG", "*.svg")]
     )
 
-# ------------------------- Plotting -------------------------
 def plot_all_models(histories, model_names):
     n = len(model_names)
 
@@ -257,8 +231,6 @@ def plot_all_models(histories, model_names):
         ax.set_title(name, pad=6, fontsize=BASE_FONT, fontweight="bold")
         ax.grid(True, linestyle="--", linewidth=0.6, alpha=0.30)
         ax.set_xlabel("Epoch", fontsize=BASE_FONT)
-
-        # Force tick labels = 12 (sometimes backend ignores rcParams)
         ax.tick_params(axis="both", labelsize=BASE_FONT)
 
         ax2 = ax.twinx()
@@ -292,7 +264,6 @@ def plot_all_models(histories, model_names):
 
     return fig
 
-# ------------------------- Main -------------------------
 def main():
     root = tk.Tk()
     root.withdraw()
