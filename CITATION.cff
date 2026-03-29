@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "burned-area-segmentation-western-canada"
+authors:
+  - family-names: "Khan"
+    given-names: "Muhammad S."
+  - family-names: "Afzaal"
+    given-names: "Hassan"
+  - family-names: "Randhawa"
+    given-names: "Gurjit S."
+  - family-names: "Farooque"
+    given-names: "Aitazaz A."
+repository-code: "https://github.com/Saadkhan32/burned-area-segmentation-western-canada"
+url: "https://github.com/Saadkhan32/burned-area-segmentation-western-canada"
+license: "MIT"
