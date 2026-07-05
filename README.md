@@ -27,6 +27,12 @@ The overall workflow used:
 - SAM-LoRA (ViT-B)
 - Mask2Former
 
+## Repository contents and usage
+- Scripts/ - Python and Google Earth Engine (JavaScript) scripts used for Sentinel-2 compositing, spectral index calculation (NDVI, NBR, NDMI), and data export.
+- requirements.txt - Python dependencies. Install with: pip install -r requirements.txt (Python 3.9 or later).
+- Annotation, 256 x 256 chip export, model training, and inference were performed in ArcGIS Pro 3.5.4 using the Export Training Data for Deep Learning and Train Deep Learning Model tools, with the parameters reported in Table 4 of the manuscript.
+- Derived data (reference masks and model outputs) are available in the Google Drive folder linked below.
+
 ## Data availability
 Large derived data files, including shared materials related to masks, outputs, and other repository-linked resources, are available at:
 
