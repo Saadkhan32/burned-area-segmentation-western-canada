@@ -1,0 +1,4 @@
+# Text files are stored and checked out with LF line endings on every platform,
+# so that "sha256sum -c SHA256SUMS" verifies on any checkout.
+* text=auto eol=lf
+*.npz binary
