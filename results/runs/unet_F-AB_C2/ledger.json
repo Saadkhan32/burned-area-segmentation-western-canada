@@ -1,0 +1,9 @@
+{
+ "run": "unet_F-AB_C2",
+ "best_val_F1_mean_window": 0.937635325064227,
+ "epochs_run": 19,
+ "best_pt_sha256": "98bf734c030a1aa47c512149f387622742f9ab7f28c69161751ce0eb30088b09",
+ "finished": "2026-10-14 02:34:27",
+ "wall_seconds": 346,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

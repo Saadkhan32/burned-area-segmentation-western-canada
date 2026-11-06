@@ -1,0 +1,9 @@
+{
+ "run": "mask2former_F-SK",
+ "best_val_F1_mean_window": 0.9097947736697709,
+ "epochs_run": 20,
+ "best_pt_sha256": "7b82ca1ef771e54a897dbc6b8af138192f580c994130e3bba8b983e928ed5272",
+ "finished": "2026-10-14 03:09:17",
+ "wall_seconds": 1770,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

@@ -1,0 +1,80 @@
+terramind_F-AB: train 83 windows, validation ['HEINZ', 'NBAC2024_BC_160', 'NBAC2023_BC_605', 'Greer_Creek', 'Tatuk_Lake', 'NBAC2024_SK_613', 'NBAC2023_SK_649'], test (never read) 45 | class weights [0.427 1.573] | load 68s
+/home/saad1/venv-burn/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+W1014 02:39:41.700000 2869257 torch/utils/flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+/home/saad1/venv-burn/lib/python3.11/site-packages/terratorch/models/necks.py:288: UserWarning: Cannot infer grid shape from input tokens (256), assuming a cls_token (default setting). Retry ReshapeTokensToImage with remove_cls_token to False. Silence this warning with remove_cls_token=False for neck ReshapeTokensToImage.
+  warnings.warn(
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 0.2534 val F1 mean 0.7620 pooled 0.7798 (19s) *
+ep   2 loss 0.1694 val F1 mean 0.8413 pooled 0.8672 (18s) *
+ep   3 loss 0.1488 val F1 mean 0.8431 pooled 0.8748 (18s) *
+ep   4 loss 0.1318 val F1 mean 0.8652 pooled 0.8999 (18s) *
+ep   5 loss 0.1303 val F1 mean 0.7997 pooled 0.8581 (17s)
+ep   6 loss 0.1166 val F1 mean 0.8717 pooled 0.9033 (18s) *
+ep   7 loss 0.1304 val F1 mean 0.8844 pooled 0.9065 (18s) *
+ep   8 loss 0.1125 val F1 mean 0.9269 pooled 0.9334 (18s) *
+ep   9 loss 0.0992 val F1 mean 0.8661 pooled 0.9020 (17s)
+ep  10 loss 0.1150 val F1 mean 0.7971 pooled 0.8425 (17s)
+ep  11 loss 0.0991 val F1 mean 0.8975 pooled 0.9193 (17s)
+ep  12 loss 0.0927 val F1 mean 0.8794 pooled 0.8668 (17s)
+ep  13 loss 0.1010 val F1 mean 0.8736 pooled 0.8811 (17s)
+ep  14 loss 0.0976 val F1 mean 0.9153 pooled 0.9164 (17s)
+ep  15 loss 0.0905 val F1 mean 0.9142 pooled 0.9294 (17s)
+ep  16 loss 0.0955 val F1 mean 0.8712 pooled 0.9094 (17s)
+ep  17 loss 0.0959 val F1 mean 0.8796 pooled 0.8865 (17s)
+ep  18 loss 0.1078 val F1 mean 0.8675 pooled 0.9060 (17s)
+early stop at epoch 18 (no improvement for 10 epochs)
+done {'run': 'terramind_F-AB', 'best_val_F1_mean_window': 0.9268581016585484, 'epochs_run': 18, 'best_pt_sha256': '69ac6e04d34ab04cb5e9d018b80cb35e14d0fccfc9f0cf6893686f878f33060c', 'finished': '2026-10-14 02:45:04', 'wall_seconds': 399, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+/home/saad1/venv-burn/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+W1014 02:45:15.486000 2871966 torch/utils/flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+/home/saad1/venv-burn/lib/python3.11/site-packages/terratorch/models/necks.py:288: UserWarning: Cannot infer grid shape from input tokens (256), assuming a cls_token (default setting). Retry ReshapeTokensToImage with remove_cls_token to False. Silence this warning with remove_cls_token=False for neck ReshapeTokensToImage.
+  warnings.warn(
+Algar_Lake_Complex {'P': 0.874, 'R': 0.973, 'F1': 0.921, 'IoU': 0.853}
+Dillion_River_Fire {'P': 0.952, 'R': 0.987, 'F1': 0.969, 'IoU': 0.94}
+Pony_Creek {'P': 0.573, 'R': 0.979, 'F1': 0.723, 'IoU': 0.566}
+NBAC2022_AB_434 {'P': 0.925, 'R': 0.961, 'F1': 0.943, 'IoU': 0.891}
+NBAC2024_AB_148 {'P': 0.826, 'R': 0.977, 'F1': 0.895, 'IoU': 0.81}
+NBAC2022_AB_442 {'P': 0.925, 'R': 0.974, 'F1': 0.949, 'IoU': 0.902}
+NBAC2023_AB_2250 {'P': 0.969, 'R': 0.8, 'F1': 0.877, 'IoU': 0.78}
+NBAC2022_AB_436 {'P': 0.94, 'R': 0.938, 'F1': 0.939, 'IoU': 0.885}
+NBAC2023_AB_364 {'P': 0.996, 'R': 0.664, 'F1': 0.797, 'IoU': 0.663}
+NBAC2023_AB_683 {'P': 0.948, 'R': 0.851, 'F1': 0.897, 'IoU': 0.813}
+NEG2023_AB_01 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+NEG2023_AB_05 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Betts {'P': 0.928, 'R': 0.933, 'F1': 0.93, 'IoU': 0.87}
+Eagle_fire {'P': 0.973, 'R': 0.731, 'F1': 0.835, 'IoU': 0.717}
+Rabbit_Lake {'P': 0.829, 'R': 0.987, 'F1': 0.901, 'IoU': 0.82}
+NBAC2023_AB_718 {'P': 0.914, 'R': 0.348, 'F1': 0.504, 'IoU': 0.337}
+NBAC2024_AB_133 {'P': 0.869, 'R': 0.996, 'F1': 0.928, 'IoU': 0.866}
+NBAC2024_AB_104 {'P': 0.945, 'R': 0.984, 'F1': 0.964, 'IoU': 0.931}
+NBAC2022_AB_438 {'P': 0.935, 'R': 0.946, 'F1': 0.94, 'IoU': 0.888}
+NBAC2022_AB_433 {'P': 0.97, 'R': 0.223, 'F1': 0.363, 'IoU': 0.222}
+NBAC2023_AB_693 {'P': 0.961, 'R': 0.986, 'F1': 0.974, 'IoU': 0.948}
+NBAC2023_AB_706 {'P': 0.905, 'R': 0.923, 'F1': 0.914, 'IoU': 0.841}
+NEG2024_AB_02 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Cattail_Lake {'P': 0.839, 'R': 0.989, 'F1': 0.908, 'IoU': 0.831}
+Hoohey_Creek {'P': 0.873, 'R': 0.948, 'F1': 0.909, 'IoU': 0.833}
+Wentzel_Fire {'P': 0.93, 'R': 0.985, 'F1': 0.957, 'IoU': 0.917}
+NBAC2024_AB_155 {'P': 0.926, 'R': 0.984, 'F1': 0.954, 'IoU': 0.913}
+NBAC2023_AB_690 {'P': 0.771, 'R': 0.933, 'F1': 0.844, 'IoU': 0.73}
+NBAC2023_AB_322 {'P': 0.866, 'R': 0.981, 'F1': 0.92, 'IoU': 0.852}
+NBAC2022_AB_439 {'P': 0.963, 'R': 0.905, 'F1': 0.933, 'IoU': 0.874}
+NBAC2023_AB_713 {'P': 0.952, 'R': 0.794, 'F1': 0.866, 'IoU': 0.764}
+NBAC2024_AB_150 {'P': 0.906, 'R': 0.892, 'F1': 0.899, 'IoU': 0.817}
+NBAC2024_AB_118 {'P': 0.923, 'R': 0.915, 'F1': 0.919, 'IoU': 0.85}
+NEG2024_AB_03 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Crooked_Lake {'P': 0.974, 'R': 0.812, 'F1': 0.885, 'IoU': 0.794}
+Levellers_Creek {'P': 0.915, 'R': 0.978, 'F1': 0.945, 'IoU': 0.896}
+owl_creek {'P': 0.945, 'R': 0.763, 'F1': 0.844, 'IoU': 0.73}
+NBAC2023_AB_714 {'P': 0.983, 'R': 0.205, 'F1': 0.34, 'IoU': 0.205}
+NBAC2023_AB_317 {'P': 0.838, 'R': 0.997, 'F1': 0.911, 'IoU': 0.836}
+NBAC2023_AB_366 {'P': 0.974, 'R': 0.684, 'F1': 0.804, 'IoU': 0.672}
+NBAC2023_AB_685 {'P': 0.867, 'R': 0.962, 'F1': 0.912, 'IoU': 0.838}
+NBAC2023_AB_680 {'P': 0.925, 'R': 0.969, 'F1': 0.947, 'IoU': 0.898}
+NBAC2023_AB_722 {'P': 0.925, 'R': 0.761, 'F1': 0.835, 'IoU': 0.717}
+NBAC2023_AB_677 {'P': 0.94, 'R': 0.965, 'F1': 0.952, 'IoU': 0.909}
+NEG2023_AB_04 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+wrote /home/saad1/scratch/burn/runs/results/terramind_F-AB_test_windows.csv

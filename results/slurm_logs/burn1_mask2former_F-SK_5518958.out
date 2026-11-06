@@ -1,0 +1,90 @@
+mask2former_F-SK: train 83 windows, validation ['Pony_Creek', 'Murtle_Lake', 'NBAC2022_AB_436', 'NBAC2023_BC_850', 'NBAC2024_BC_247', 'Satah_Mountain', 'NBAC2023_AB_722'], test (never read) 45 | class weights [0.52 1.48] | load 71s
+[transformers] You passed `num_labels=2` which is incompatible to the `id2label` map of length `150`.
+Loading weights:   0%|          | 0/758 [00:00<?, ?it/s]Loading weights:  34%|███▍      | 261/758 [00:00<00:00, 2609.24it/s]Loading weights:  75%|███████▌  | 569/758 [00:00<00:00, 2868.63it/s]Loading weights: 100%|██████████| 758/758 [00:00<00:00, 2988.75it/s]
+[transformers] [1mMask2FormerForUniversalSegmentation LOAD REPORT[0m from: facebook/mask2former-swin-large-ade-semantic
+Key                                                                                                                      | Status     |                                                                                         
+-------------------------------------------------------------------------------------------------------------------------+------------+-----------------------------------------------------------------------------------------
+model.pixel_level_module.encoder.swin.encoder.layers.{0, 1, 2, 3}.blocks.{0...17}.attention.self.relative_position_index | UNEXPECTED |                                                                                         
+model.pixel_level_module.encoder.swin.layernorm.bias                                                                     | MISSING    |                                                                                         
+model.pixel_level_module.encoder.swin.layernorm.weight                                                                   | MISSING    |                                                                                         
+criterion.empty_weight                                                                                                   | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151]) vs model:torch.Size([3])          
+class_predictor.weight                                                                                                   | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151, 256]) vs model:torch.Size([3, 256])
+class_predictor.bias                                                                                                     | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151]) vs model:torch.Size([3])          
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+- MISMATCH:	ckpt weights were loaded, but they did not match the original empty weight shapes.
+/home/saad1/burn/drac/train.py:148: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 36.2350 val F1 mean 0.8526 pooled 0.8473 (84s) *
+ep   2 loss 32.2805 val F1 mean 0.8042 pooled 0.8132 (81s)
+ep   3 loss 30.7651 val F1 mean 0.8998 pooled 0.9049 (82s) *
+ep   4 loss 29.8105 val F1 mean 0.8371 pooled 0.8630 (81s)
+ep   5 loss 29.6949 val F1 mean 0.9002 pooled 0.9063 (80s)
+ep   6 loss 28.6453 val F1 mean 0.9042 pooled 0.9108 (137s) *
+ep   7 loss 28.5731 val F1 mean 0.8821 pooled 0.8847 (80s)
+ep   8 loss 28.5990 val F1 mean 0.8989 pooled 0.9040 (81s)
+ep   9 loss 27.8357 val F1 mean 0.9000 pooled 0.9068 (80s)
+ep  10 loss 27.1815 val F1 mean 0.9098 pooled 0.9093 (82s) *
+ep  11 loss 27.5901 val F1 mean 0.9004 pooled 0.9099 (81s)
+ep  12 loss 27.8323 val F1 mean 0.9075 pooled 0.9132 (82s)
+ep  13 loss 27.4526 val F1 mean 0.9053 pooled 0.9132 (81s)
+ep  14 loss 26.9511 val F1 mean 0.9045 pooled 0.9108 (82s)
+ep  15 loss 26.1050 val F1 mean 0.9023 pooled 0.9119 (83s)
+ep  16 loss 25.9099 val F1 mean 0.8953 pooled 0.9001 (81s)
+ep  17 loss 26.5993 val F1 mean 0.8919 pooled 0.8982 (81s)
+ep  18 loss 26.5427 val F1 mean 0.9052 pooled 0.9135 (83s)
+ep  19 loss 26.9248 val F1 mean 0.8466 pooled 0.8450 (82s)
+ep  20 loss 25.5350 val F1 mean 0.9030 pooled 0.9075 (81s)
+early stop at epoch 20 (no improvement for 10 epochs)
+done {'run': 'mask2former_F-SK', 'best_val_F1_mean_window': 0.9097947736697709, 'epochs_run': 20, 'best_pt_sha256': '7b82ca1ef771e54a897dbc6b8af138192f580c994130e3bba8b983e928ed5272', 'finished': '2026-10-14 03:09:17', 'wall_seconds': 1770, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+HAMIL {'P': 0.972, 'R': 0.963, 'F1': 0.967, 'IoU': 0.937}
+LXLZS {'P': 0.936, 'R': 0.966, 'F1': 0.951, 'IoU': 0.907}
+NBAC2024_SK_347 {'P': 0.953, 'R': 0.959, 'F1': 0.956, 'IoU': 0.916}
+NBAC2024_SK_381 {'P': 0.948, 'R': 0.939, 'F1': 0.943, 'IoU': 0.893}
+NBAC2023_SK_607 {'P': 0.952, 'R': 0.968, 'F1': 0.96, 'IoU': 0.924}
+NBAC2023_SK_622 {'P': 0.951, 'R': 0.885, 'F1': 0.916, 'IoU': 0.846}
+NBAC2022_SK_472 {'P': 0.991, 'R': 0.927, 'F1': 0.958, 'IoU': 0.92}
+NBAC2024_SK_401 {'P': 0.597, 'R': 0.87, 'F1': 0.708, 'IoU': 0.548}
+NBAC2023_SK_618 {'P': 0.916, 'R': 0.974, 'F1': 0.944, 'IoU': 0.894}
+NEG2023_SK_03 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+BOLDING {'P': 0.947, 'R': 0.907, 'F1': 0.926, 'IoU': 0.862}
+HEINZ {'P': 0.956, 'R': 0.944, 'F1': 0.95, 'IoU': 0.904}
+SHAD {'P': 0.958, 'R': 0.924, 'F1': 0.941, 'IoU': 0.889}
+NBAC2024_SK_386 {'P': 0.928, 'R': 0.889, 'F1': 0.908, 'IoU': 0.832}
+NBAC2023_SK_645 {'P': 0.985, 'R': 0.945, 'F1': 0.964, 'IoU': 0.931}
+NBAC2022_SK_462 {'P': 0.963, 'R': 0.928, 'F1': 0.945, 'IoU': 0.896}
+NBAC2024_SK_350 {'P': 0.982, 'R': 0.981, 'F1': 0.982, 'IoU': 0.964}
+NBAC2022_SK_459 {'P': 0.983, 'R': 0.952, 'F1': 0.968, 'IoU': 0.937}
+NBAC2024_SK_349 {'P': 0.982, 'R': 0.96, 'F1': 0.971, 'IoU': 0.944}
+NBAC2024_SK_612 {'P': 0.869, 'R': 0.947, 'F1': 0.906, 'IoU': 0.829}
+NEG2023_SK_04 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+COWIE {'P': 0.969, 'R': 0.92, 'F1': 0.944, 'IoU': 0.893}
+JACKFISH {'P': 0.975, 'R': 0.959, 'F1': 0.967, 'IoU': 0.936}
+SHAW {'P': 0.854, 'R': 0.956, 'F1': 0.902, 'IoU': 0.822}
+NBAC2023_SK_642 {'P': 0.976, 'R': 0.941, 'F1': 0.958, 'IoU': 0.92}
+NBAC2023_SK_629 {'P': 0.934, 'R': 0.954, 'F1': 0.944, 'IoU': 0.894}
+NBAC2024_SK_375 {'P': 0.942, 'R': 0.93, 'F1': 0.936, 'IoU': 0.88}
+NBAC2024_SK_393 {'P': 0.933, 'R': 0.952, 'F1': 0.943, 'IoU': 0.891}
+NBAC2022_SK_451 {'P': 0.985, 'R': 0.931, 'F1': 0.957, 'IoU': 0.918}
+NBAC2023_SK_54 {'P': 0.97, 'R': 0.962, 'F1': 0.966, 'IoU': 0.934}
+NBAC2024_SK_367 {'P': 0.948, 'R': 0.949, 'F1': 0.948, 'IoU': 0.902}
+NEG2023_SK_01 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+NEG2022_SK_05 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+DIGBEE {'P': 0.99, 'R': 0.966, 'F1': 0.978, 'IoU': 0.956}
+KENNY {'P': 0.954, 'R': 0.956, 'F1': 0.955, 'IoU': 0.913}
+SMITH {'P': 0.864, 'R': 0.987, 'F1': 0.922, 'IoU': 0.855}
+NBAC2024_SK_402 {'P': 0.921, 'R': 0.978, 'F1': 0.948, 'IoU': 0.902}
+NBAC2024_SK_370 {'P': 0.868, 'R': 0.965, 'F1': 0.914, 'IoU': 0.842}
+NBAC2024_SK_342 {'P': 0.902, 'R': 0.937, 'F1': 0.919, 'IoU': 0.851}
+NBAC2024_SK_613 {'P': 0.94, 'R': 0.956, 'F1': 0.948, 'IoU': 0.901}
+NBAC2023_SK_649 {'P': 0.991, 'R': 0.975, 'F1': 0.983, 'IoU': 0.967}
+NBAC2024_SK_388 {'P': 0.949, 'R': 0.937, 'F1': 0.943, 'IoU': 0.892}
+NBAC2023_SK_637 {'P': 0.951, 'R': 0.891, 'F1': 0.92, 'IoU': 0.852}
+NBAC2024_SK_360 {'P': 0.957, 'R': 0.952, 'F1': 0.955, 'IoU': 0.913}
+NEG2023_SK_02 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+wrote /home/saad1/scratch/burn/runs/results/mask2former_F-SK_test_windows.csv

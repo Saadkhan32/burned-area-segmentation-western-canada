@@ -1,0 +1,9 @@
+{
+ "run": "samlora_F-AB",
+ "best_val_F1_mean_window": 0.9355439289227917,
+ "epochs_run": 23,
+ "best_pt_sha256": "c689923926078fa938fccf1408e702555d72ad857649357438bb27298986c2f4",
+ "finished": "2026-10-14 03:40:37",
+ "wall_seconds": 4316,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

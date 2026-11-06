@@ -1,0 +1,9 @@
+{
+ "run": "pspnet_F-BC_C2",
+ "best_val_F1_mean_window": 0.931250698312566,
+ "epochs_run": 16,
+ "best_pt_sha256": "d510e5bd0dd6573e9367169de033b6bc310769ca5b36f4ed240c34e555bb0233",
+ "finished": "2026-10-14 02:33:04",
+ "wall_seconds": 262,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

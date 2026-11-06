@@ -1,0 +1,9 @@
+{
+ "run": "deeplabv3_F-BC_C2",
+ "best_val_F1_mean_window": 0.9398738253468112,
+ "epochs_run": 24,
+ "best_pt_sha256": "222b7300127f1711d987b4bc2d111fb89116f5fabaaf11c6cafff3f7ca9ea8b5",
+ "finished": "2026-10-14 02:36:21",
+ "wall_seconds": 460,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

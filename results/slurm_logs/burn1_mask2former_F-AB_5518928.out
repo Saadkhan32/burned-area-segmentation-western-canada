@@ -1,0 +1,94 @@
+mask2former_F-AB: train 83 windows, validation ['HEINZ', 'NBAC2024_BC_160', 'NBAC2023_BC_605', 'Greer_Creek', 'Tatuk_Lake', 'NBAC2024_SK_613', 'NBAC2023_SK_649'], test (never read) 45 | class weights [0.427 1.573] | load 67s
+[transformers] You passed `num_labels=2` which is incompatible to the `id2label` map of length `150`.
+Loading weights:   0%|          | 0/758 [00:00<?, ?it/s]Loading weights:  31%|███       | 233/758 [00:00<00:00, 2279.05it/s]Loading weights:  61%|██████    | 461/758 [00:00<00:00, 1070.41it/s]Loading weights:  88%|████████▊ | 666/758 [00:00<00:00, 1345.57it/s]Loading weights: 100%|██████████| 758/758 [00:00<00:00, 1465.36it/s]
+[transformers] [1mMask2FormerForUniversalSegmentation LOAD REPORT[0m from: facebook/mask2former-swin-large-ade-semantic
+Key                                                                                                                      | Status     |                                                                                         
+-------------------------------------------------------------------------------------------------------------------------+------------+-----------------------------------------------------------------------------------------
+model.pixel_level_module.encoder.swin.encoder.layers.{0, 1, 2, 3}.blocks.{0...17}.attention.self.relative_position_index | UNEXPECTED |                                                                                         
+model.pixel_level_module.encoder.swin.layernorm.bias                                                                     | MISSING    |                                                                                         
+model.pixel_level_module.encoder.swin.layernorm.weight                                                                   | MISSING    |                                                                                         
+criterion.empty_weight                                                                                                   | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151]) vs model:torch.Size([3])          
+class_predictor.bias                                                                                                     | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151]) vs model:torch.Size([3])          
+class_predictor.weight                                                                                                   | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151, 256]) vs model:torch.Size([3, 256])
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+- MISMATCH:	ckpt weights were loaded, but they did not match the original empty weight shapes.
+/home/saad1/burn/drac/train.py:148: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 34.7342 val F1 mean 0.9289 pooled 0.9263 (83s) *
+ep   2 loss 28.8891 val F1 mean 0.9002 pooled 0.9218 (80s)
+ep   3 loss 30.0659 val F1 mean 0.9076 pooled 0.9019 (80s)
+ep   4 loss 28.0549 val F1 mean 0.8935 pooled 0.8811 (81s)
+ep   5 loss 27.0675 val F1 mean 0.8424 pooled 0.8981 (80s)
+ep   6 loss 26.2269 val F1 mean 0.9270 pooled 0.9184 (80s)
+ep   7 loss 26.3957 val F1 mean 0.9329 pooled 0.9392 (81s) *
+ep   8 loss 25.7568 val F1 mean 0.9391 pooled 0.9389 (81s) *
+ep   9 loss 26.0827 val F1 mean 0.9371 pooled 0.9358 (79s)
+ep  10 loss 25.7562 val F1 mean 0.9116 pooled 0.8970 (79s)
+ep  11 loss 25.4939 val F1 mean 0.8816 pooled 0.8561 (79s)
+ep  12 loss 25.1672 val F1 mean 0.9347 pooled 0.9424 (79s)
+ep  13 loss 25.5666 val F1 mean 0.9287 pooled 0.9260 (79s)
+ep  14 loss 25.8956 val F1 mean 0.9405 pooled 0.9442 (81s) *
+ep  15 loss 25.1319 val F1 mean 0.9373 pooled 0.9395 (80s)
+ep  16 loss 24.2220 val F1 mean 0.8966 pooled 0.9259 (79s)
+ep  17 loss 25.4058 val F1 mean 0.9388 pooled 0.9419 (80s)
+ep  18 loss 24.6834 val F1 mean 0.9380 pooled 0.9380 (80s)
+ep  19 loss 24.9227 val F1 mean 0.9195 pooled 0.9356 (80s)
+ep  20 loss 25.5430 val F1 mean 0.8961 pooled 0.9253 (80s)
+ep  21 loss 24.3129 val F1 mean 0.9340 pooled 0.9331 (80s)
+ep  22 loss 23.6699 val F1 mean 0.9092 pooled 0.8997 (79s)
+ep  23 loss 24.7586 val F1 mean 0.9386 pooled 0.9390 (80s)
+ep  24 loss 24.7954 val F1 mean 0.9355 pooled 0.9362 (80s)
+early stop at epoch 24 (no improvement for 10 epochs)
+done {'run': 'mask2former_F-AB', 'best_val_F1_mean_window': 0.9405032266844779, 'epochs_run': 24, 'best_pt_sha256': 'ac1709ecbbfb3727c93156d4fa0ded1ac30119a7d045ad5d506e433e378ebdb0', 'finished': '2026-10-14 03:09:58', 'wall_seconds': 2001, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+Algar_Lake_Complex {'P': 0.901, 'R': 0.974, 'F1': 0.936, 'IoU': 0.88}
+Dillion_River_Fire {'P': 0.976, 'R': 0.969, 'F1': 0.972, 'IoU': 0.946}
+Pony_Creek {'P': 0.611, 'R': 0.974, 'F1': 0.751, 'IoU': 0.601}
+NBAC2022_AB_434 {'P': 0.943, 'R': 0.95, 'F1': 0.946, 'IoU': 0.898}
+NBAC2024_AB_148 {'P': 0.788, 'R': 0.962, 'F1': 0.867, 'IoU': 0.765}
+NBAC2022_AB_442 {'P': 0.943, 'R': 0.967, 'F1': 0.955, 'IoU': 0.913}
+NBAC2023_AB_2250 {'P': 0.972, 'R': 0.859, 'F1': 0.912, 'IoU': 0.838}
+NBAC2022_AB_436 {'P': 0.955, 'R': 0.946, 'F1': 0.95, 'IoU': 0.905}
+NBAC2023_AB_364 {'P': 0.997, 'R': 0.787, 'F1': 0.879, 'IoU': 0.785}
+NBAC2023_AB_683 {'P': 0.959, 'R': 0.851, 'F1': 0.902, 'IoU': 0.821}
+NEG2023_AB_01 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+NEG2023_AB_05 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Betts {'P': 0.95, 'R': 0.917, 'F1': 0.933, 'IoU': 0.875}
+Eagle_fire {'P': 0.982, 'R': 0.824, 'F1': 0.896, 'IoU': 0.811}
+Rabbit_Lake {'P': 0.9, 'R': 0.969, 'F1': 0.933, 'IoU': 0.875}
+NBAC2023_AB_718 {'P': 0.962, 'R': 0.62, 'F1': 0.754, 'IoU': 0.605}
+NBAC2024_AB_133 {'P': 0.965, 'R': 0.969, 'F1': 0.967, 'IoU': 0.937}
+NBAC2024_AB_104 {'P': 0.86, 'R': 0.97, 'F1': 0.912, 'IoU': 0.838}
+NBAC2022_AB_438 {'P': 0.938, 'R': 0.916, 'F1': 0.927, 'IoU': 0.864}
+NBAC2022_AB_433 {'P': 0.958, 'R': 0.869, 'F1': 0.911, 'IoU': 0.837}
+NBAC2023_AB_693 {'P': 0.969, 'R': 0.97, 'F1': 0.969, 'IoU': 0.94}
+NBAC2023_AB_706 {'P': 0.893, 'R': 0.911, 'F1': 0.902, 'IoU': 0.822}
+NEG2024_AB_02 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Cattail_Lake {'P': 0.958, 'R': 0.975, 'F1': 0.966, 'IoU': 0.935}
+Hoohey_Creek {'P': 0.942, 'R': 0.931, 'F1': 0.936, 'IoU': 0.88}
+Wentzel_Fire {'P': 0.956, 'R': 0.982, 'F1': 0.969, 'IoU': 0.939}
+NBAC2024_AB_155 {'P': 0.968, 'R': 0.974, 'F1': 0.971, 'IoU': 0.943}
+NBAC2023_AB_690 {'P': 0.945, 'R': 0.842, 'F1': 0.89, 'IoU': 0.802}
+NBAC2023_AB_322 {'P': 0.931, 'R': 0.949, 'F1': 0.94, 'IoU': 0.886}
+NBAC2022_AB_439 {'P': 0.985, 'R': 0.917, 'F1': 0.95, 'IoU': 0.904}
+NBAC2023_AB_713 {'P': 0.957, 'R': 0.796, 'F1': 0.869, 'IoU': 0.768}
+NBAC2024_AB_150 {'P': 0.965, 'R': 0.903, 'F1': 0.933, 'IoU': 0.875}
+NBAC2024_AB_118 {'P': 0.938, 'R': 0.906, 'F1': 0.922, 'IoU': 0.855}
+NEG2024_AB_03 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Crooked_Lake {'P': 0.976, 'R': 0.879, 'F1': 0.925, 'IoU': 0.861}
+Levellers_Creek {'P': 0.934, 'R': 0.979, 'F1': 0.956, 'IoU': 0.915}
+owl_creek {'P': 0.926, 'R': 0.856, 'F1': 0.89, 'IoU': 0.801}
+NBAC2023_AB_714 {'P': 0.904, 'R': 0.629, 'F1': 0.742, 'IoU': 0.589}
+NBAC2023_AB_317 {'P': 0.881, 'R': 0.989, 'F1': 0.932, 'IoU': 0.873}
+NBAC2023_AB_366 {'P': 0.982, 'R': 0.787, 'F1': 0.874, 'IoU': 0.775}
+NBAC2023_AB_685 {'P': 0.928, 'R': 0.95, 'F1': 0.939, 'IoU': 0.885}
+NBAC2023_AB_680 {'P': 0.959, 'R': 0.962, 'F1': 0.96, 'IoU': 0.924}
+NBAC2023_AB_722 {'P': 0.95, 'R': 0.812, 'F1': 0.876, 'IoU': 0.779}
+NBAC2023_AB_677 {'P': 0.977, 'R': 0.942, 'F1': 0.959, 'IoU': 0.921}
+NEG2023_AB_04 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+wrote /home/saad1/scratch/burn/runs/results/mask2former_F-AB_test_windows.csv

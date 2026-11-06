@@ -1,0 +1,95 @@
+prithvi_lora_F-BC: train 83 windows, validation ['Dillion_River_Fire', 'NBAC2022_AB_436', 'Rabbit_Lake', 'COWIE', 'NBAC2023_AB_722', 'NBAC2024_SK_613', 'NBAC2023_SK_649'], test (never read) 45 | class weights [0.527 1.473] | load 75s
+/home/saad1/venv-burn/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+W1014 02:40:27.967000 1846299 torch/utils/flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 0.3056 val F1 mean 0.8708 pooled 0.8787 (25s) *
+ep   2 loss 0.1457 val F1 mean 0.8894 pooled 0.8940 (24s) *
+ep   3 loss 0.1076 val F1 mean 0.8096 pooled 0.8168 (24s)
+ep   4 loss 0.0882 val F1 mean 0.8800 pooled 0.8981 (25s)
+ep   5 loss 0.0849 val F1 mean 0.9168 pooled 0.9146 (25s) *
+ep   6 loss 0.0888 val F1 mean 0.8763 pooled 0.8928 (24s)
+ep   7 loss 0.0804 val F1 mean 0.9151 pooled 0.9089 (23s)
+ep   8 loss 0.0760 val F1 mean 0.9251 pooled 0.9212 (26s) *
+ep   9 loss 0.0760 val F1 mean 0.9232 pooled 0.9177 (24s)
+ep  10 loss 0.0721 val F1 mean 0.8876 pooled 0.8960 (23s)
+ep  11 loss 0.0701 val F1 mean 0.9243 pooled 0.9196 (24s)
+ep  12 loss 0.0699 val F1 mean 0.9353 pooled 0.9302 (26s) *
+ep  13 loss 0.0733 val F1 mean 0.8501 pooled 0.8266 (23s)
+ep  14 loss 0.0680 val F1 mean 0.9234 pooled 0.9237 (24s)
+ep  15 loss 0.0658 val F1 mean 0.9074 pooled 0.9146 (24s)
+ep  16 loss 0.0662 val F1 mean 0.8990 pooled 0.9057 (23s)
+ep  17 loss 0.0650 val F1 mean 0.9374 pooled 0.9306 (26s) *
+ep  18 loss 0.0650 val F1 mean 0.9274 pooled 0.9264 (24s)
+ep  19 loss 0.0707 val F1 mean 0.9290 pooled 0.9277 (23s)
+ep  20 loss 0.0634 val F1 mean 0.9374 pooled 0.9356 (24s)
+ep  21 loss 0.0663 val F1 mean 0.9294 pooled 0.9262 (24s)
+ep  22 loss 0.0705 val F1 mean 0.9109 pooled 0.9164 (23s)
+ep  23 loss 0.0641 val F1 mean 0.9383 pooled 0.9336 (23s)
+ep  24 loss 0.0671 val F1 mean 0.9395 pooled 0.9314 (25s) *
+ep  25 loss 0.0617 val F1 mean 0.9480 pooled 0.9425 (25s) *
+ep  26 loss 0.0631 val F1 mean 0.9346 pooled 0.9313 (23s)
+ep  27 loss 0.0607 val F1 mean 0.9147 pooled 0.9083 (24s)
+ep  28 loss 0.0619 val F1 mean 0.9192 pooled 0.9282 (23s)
+ep  29 loss 0.0603 val F1 mean 0.9123 pooled 0.9222 (24s)
+ep  30 loss 0.0611 val F1 mean 0.9261 pooled 0.9280 (23s)
+ep  31 loss 0.0627 val F1 mean 0.8997 pooled 0.9157 (28s)
+ep  32 loss 0.0618 val F1 mean 0.9134 pooled 0.9208 (23s)
+ep  33 loss 0.0602 val F1 mean 0.9432 pooled 0.9383 (24s)
+ep  34 loss 0.0589 val F1 mean 0.9217 pooled 0.9286 (23s)
+ep  35 loss 0.0600 val F1 mean 0.9146 pooled 0.9133 (23s)
+early stop at epoch 35 (no improvement for 10 epochs)
+done {'run': 'prithvi_lora_F-BC', 'best_val_F1_mean_window': 0.9479868529641784, 'epochs_run': 35, 'best_pt_sha256': '47678d86bb99c2f0ecbe6f1d5ccc41a250d50c985898b221b1252b9d26ef605a', 'finished': '2026-10-14 02:54:36', 'wall_seconds': 935, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+/home/saad1/venv-burn/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+W1014 02:54:48.488000 1853884 torch/utils/flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+/home/saad1/venv-burn/lib/python3.11/site-packages/terratorch/models/encoder_decoder_factory.py:190: UserWarning: You are using PEFT without a pretrained backbone. If you are loading a checkpoint afterwards this is probably fine, but if you are training a model check the backbone_pretrained parameter.
+  warnings.warn(msg, stacklevel=1)
+Anahim {'P': 0.955, 'R': 0.975, 'F1': 0.965, 'IoU': 0.933}
+Murtle_Lake {'P': 0.984, 'R': 0.961, 'F1': 0.972, 'IoU': 0.946}
+Tomias_Mountain {'P': 0.981, 'R': 0.965, 'F1': 0.973, 'IoU': 0.947}
+NBAC2024_BC_200 {'P': 0.971, 'R': 0.158, 'F1': 0.272, 'IoU': 0.157}
+NBAC2023_BC_907 {'P': 0.587, 'R': 0.761, 'F1': 0.663, 'IoU': 0.496}
+NBAC2023_BC_737 {'P': 0.862, 'R': 0.966, 'F1': 0.911, 'IoU': 0.837}
+NBAC2023_BC_839 {'P': 0.977, 'R': 0.896, 'F1': 0.935, 'IoU': 0.877}
+NBAC2023_BC_850 {'P': 0.798, 'R': 0.865, 'F1': 0.83, 'IoU': 0.71}
+NBAC2024_BC_247 {'P': 0.91, 'R': 0.991, 'F1': 0.949, 'IoU': 0.902}
+NBAC2023_BC_881 {'P': 0.888, 'R': 0.777, 'F1': 0.829, 'IoU': 0.708}
+NBAC2023_BC_726 {'P': 0.949, 'R': 0.969, 'F1': 0.959, 'IoU': 0.921}
+NEG2023_BC_04 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Bull_Canyone {'P': 0.891, 'R': 0.966, 'F1': 0.927, 'IoU': 0.864}
+Roosemoore {'P': 0.943, 'R': 0.932, 'F1': 0.937, 'IoU': 0.882}
+NBAC2023_BC_884 {'P': 0.91, 'R': 0.971, 'F1': 0.939, 'IoU': 0.886}
+NBAC2023_BC_908 {'P': 0.921, 'R': 0.989, 'F1': 0.954, 'IoU': 0.912}
+NBAC2023_BC_1464 {'P': 0.946, 'R': 0.816, 'F1': 0.876, 'IoU': 0.78}
+NBAC2024_BC_160 {'P': 0.908, 'R': 0.985, 'F1': 0.945, 'IoU': 0.896}
+NBAC2023_BC_797 {'P': 0.919, 'R': 0.982, 'F1': 0.949, 'IoU': 0.904}
+NBAC2024_BC_208 {'P': 0.924, 'R': 0.618, 'F1': 0.741, 'IoU': 0.588}
+NBAC2023_BC_889 {'P': 0.959, 'R': 0.987, 'F1': 0.973, 'IoU': 0.947}
+NBAC2023_BC_605 {'P': 0.801, 'R': 0.933, 'F1': 0.862, 'IoU': 0.757}
+NEG2023_BC_01 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+NEG2023_BC_05 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+Great_Beaver_Lake {'P': 0.941, 'R': 0.971, 'F1': 0.956, 'IoU': 0.915}
+Satah_Mountain {'P': 0.925, 'R': 0.989, 'F1': 0.956, 'IoU': 0.915}
+NBAC2023_BC_837 {'P': 0.917, 'R': 0.951, 'F1': 0.934, 'IoU': 0.875}
+NBAC2024_BC_206 {'P': 0.94, 'R': 0.986, 'F1': 0.962, 'IoU': 0.927}
+NBAC2023_BC_905 {'P': 0.922, 'R': 0.739, 'F1': 0.821, 'IoU': 0.696}
+NBAC2023_BC_861 {'P': 0.857, 'R': 0.972, 'F1': 0.911, 'IoU': 0.836}
+NBAC2023_BC_849 {'P': 0.987, 'R': 0.393, 'F1': 0.562, 'IoU': 0.391}
+NBAC2022_BC_607 {'P': 0.467, 'R': 0.958, 'F1': 0.628, 'IoU': 0.458}
+NBAC2024_BC_159 {'P': 0.791, 'R': 0.962, 'F1': 0.868, 'IoU': 0.767}
+NBAC2023_BC_808 {'P': 0.87, 'R': 0.926, 'F1': 0.897, 'IoU': 0.813}
+NEG2023_BC_02 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Greer_Creek {'P': 0.89, 'R': 0.975, 'F1': 0.931, 'IoU': 0.87}
+Tatuk_Lake {'P': 0.9, 'R': 0.976, 'F1': 0.936, 'IoU': 0.88}
+NBAC2024_BC_230 {'P': 0.866, 'R': 0.991, 'F1': 0.924, 'IoU': 0.859}
+NBAC2023_BC_779 {'P': 0.976, 'R': 0.942, 'F1': 0.958, 'IoU': 0.92}
+NBAC2023_BC_820 {'P': 0.877, 'R': 0.993, 'F1': 0.932, 'IoU': 0.872}
+NBAC2023_BC_854 {'P': 0.935, 'R': 0.888, 'F1': 0.911, 'IoU': 0.836}
+NBAC2023_BC_774 {'P': 0.941, 'R': 0.978, 'F1': 0.959, 'IoU': 0.922}
+NBAC2024_BC_171 {'P': 0.459, 'R': 0.954, 'F1': 0.62, 'IoU': 0.449}
+NBAC2024_BC_193 {'P': 0.929, 'R': 0.69, 'F1': 0.792, 'IoU': 0.655}
+NEG2023_BC_03 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+wrote /home/saad1/scratch/burn/runs/results/prithvi_lora_F-BC_test_windows.csv

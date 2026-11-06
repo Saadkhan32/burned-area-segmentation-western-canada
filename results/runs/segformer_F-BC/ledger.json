@@ -1,0 +1,9 @@
+{
+ "run": "segformer_F-BC",
+ "best_val_F1_mean_window": 0.9421555256088736,
+ "epochs_run": 24,
+ "best_pt_sha256": "91fcd86b3607f4440d6ef7499bc11737067cd0fc27f0407130a01b2e8e915957",
+ "finished": "2026-10-14 02:36:36",
+ "wall_seconds": 475,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

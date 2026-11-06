@@ -1,0 +1,78 @@
+prithvi_lora_F-AB: train 83 windows, validation ['HEINZ', 'NBAC2024_BC_160', 'NBAC2023_BC_605', 'Greer_Creek', 'Tatuk_Lake', 'NBAC2024_SK_613', 'NBAC2023_SK_649'], test (never read) 45 | class weights [0.427 1.573] | load 70s
+/home/saad1/venv-burn/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+W1014 02:39:41.686000 1657922 torch/utils/flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 0.2863 val F1 mean 0.8728 pooled 0.9016 (28s) *
+ep   2 loss 0.1414 val F1 mean 0.8783 pooled 0.9021 (26s) *
+ep   3 loss 0.1022 val F1 mean 0.9120 pooled 0.9320 (26s) *
+ep   4 loss 0.0905 val F1 mean 0.9129 pooled 0.9245 (24s)
+ep   5 loss 0.0869 val F1 mean 0.9115 pooled 0.9303 (24s)
+ep   6 loss 0.0776 val F1 mean 0.9246 pooled 0.9332 (26s) *
+ep   7 loss 0.0804 val F1 mean 0.9347 pooled 0.9365 (26s) *
+ep   8 loss 0.0741 val F1 mean 0.9363 pooled 0.9360 (26s) *
+ep   9 loss 0.0691 val F1 mean 0.9223 pooled 0.9156 (24s)
+ep  10 loss 0.0721 val F1 mean 0.9303 pooled 0.9277 (24s)
+ep  11 loss 0.0635 val F1 mean 0.9313 pooled 0.9314 (24s)
+ep  12 loss 0.0651 val F1 mean 0.9295 pooled 0.9246 (24s)
+ep  13 loss 0.0673 val F1 mean 0.9296 pooled 0.9317 (24s)
+ep  14 loss 0.0742 val F1 mean 0.9308 pooled 0.9279 (24s)
+ep  15 loss 0.0680 val F1 mean 0.9070 pooled 0.8905 (24s)
+ep  16 loss 0.0637 val F1 mean 0.9278 pooled 0.9271 (24s)
+ep  17 loss 0.0637 val F1 mean 0.9281 pooled 0.9264 (24s)
+ep  18 loss 0.0647 val F1 mean 0.9302 pooled 0.9286 (24s)
+early stop at epoch 18 (no improvement for 10 epochs)
+done {'run': 'prithvi_lora_F-AB', 'best_val_F1_mean_window': 0.9363373313640658, 'epochs_run': 18, 'best_pt_sha256': 'bf7a97a358d686ecb06185e62bbdae50dbf5067c1c3826a814af8df900656777', 'finished': '2026-10-14 02:47:21', 'wall_seconds': 545, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+/home/saad1/venv-burn/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+W1014 02:47:33.801000 1661459 torch/utils/flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+/home/saad1/venv-burn/lib/python3.11/site-packages/terratorch/models/encoder_decoder_factory.py:190: UserWarning: You are using PEFT without a pretrained backbone. If you are loading a checkpoint afterwards this is probably fine, but if you are training a model check the backbone_pretrained parameter.
+  warnings.warn(msg, stacklevel=1)
+Algar_Lake_Complex {'P': 0.873, 'R': 0.982, 'F1': 0.925, 'IoU': 0.86}
+Dillion_River_Fire {'P': 0.974, 'R': 0.973, 'F1': 0.973, 'IoU': 0.948}
+Pony_Creek {'P': 0.773, 'R': 0.986, 'F1': 0.866, 'IoU': 0.764}
+NBAC2022_AB_434 {'P': 0.927, 'R': 0.965, 'F1': 0.946, 'IoU': 0.897}
+NBAC2024_AB_148 {'P': 0.903, 'R': 0.972, 'F1': 0.936, 'IoU': 0.88}
+NBAC2022_AB_442 {'P': 0.929, 'R': 0.974, 'F1': 0.951, 'IoU': 0.906}
+NBAC2023_AB_2250 {'P': 0.951, 'R': 0.901, 'F1': 0.925, 'IoU': 0.861}
+NBAC2022_AB_436 {'P': 0.931, 'R': 0.965, 'F1': 0.947, 'IoU': 0.9}
+NBAC2023_AB_364 {'P': 0.989, 'R': 0.598, 'F1': 0.745, 'IoU': 0.594}
+NBAC2023_AB_683 {'P': 0.936, 'R': 0.903, 'F1': 0.919, 'IoU': 0.85}
+NEG2023_AB_01 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+NEG2023_AB_05 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Betts {'P': 0.934, 'R': 0.935, 'F1': 0.934, 'IoU': 0.877}
+Eagle_fire {'P': 0.963, 'R': 0.898, 'F1': 0.929, 'IoU': 0.867}
+Rabbit_Lake {'P': 0.892, 'R': 0.987, 'F1': 0.937, 'IoU': 0.882}
+NBAC2023_AB_718 {'P': 0.995, 'R': 0.54, 'F1': 0.7, 'IoU': 0.539}
+NBAC2024_AB_133 {'P': 0.928, 'R': 0.995, 'F1': 0.96, 'IoU': 0.924}
+NBAC2024_AB_104 {'P': 0.974, 'R': 0.982, 'F1': 0.978, 'IoU': 0.957}
+NBAC2022_AB_438 {'P': 0.914, 'R': 0.954, 'F1': 0.934, 'IoU': 0.876}
+NBAC2022_AB_433 {'P': 0.941, 'R': 0.934, 'F1': 0.938, 'IoU': 0.883}
+NBAC2023_AB_693 {'P': 0.983, 'R': 0.978, 'F1': 0.981, 'IoU': 0.962}
+NBAC2023_AB_706 {'P': 0.914, 'R': 0.939, 'F1': 0.926, 'IoU': 0.863}
+NEG2024_AB_02 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Cattail_Lake {'P': 0.912, 'R': 0.992, 'F1': 0.95, 'IoU': 0.906}
+Hoohey_Creek {'P': 0.904, 'R': 0.968, 'F1': 0.935, 'IoU': 0.878}
+Wentzel_Fire {'P': 0.951, 'R': 0.984, 'F1': 0.968, 'IoU': 0.937}
+NBAC2024_AB_155 {'P': 0.942, 'R': 0.988, 'F1': 0.965, 'IoU': 0.932}
+NBAC2023_AB_690 {'P': 0.914, 'R': 0.898, 'F1': 0.906, 'IoU': 0.828}
+NBAC2023_AB_322 {'P': 0.911, 'R': 0.977, 'F1': 0.943, 'IoU': 0.892}
+NBAC2022_AB_439 {'P': 0.973, 'R': 0.793, 'F1': 0.874, 'IoU': 0.776}
+NBAC2023_AB_713 {'P': 0.937, 'R': 0.876, 'F1': 0.906, 'IoU': 0.827}
+NBAC2024_AB_150 {'P': 0.955, 'R': 0.92, 'F1': 0.937, 'IoU': 0.882}
+NBAC2024_AB_118 {'P': 0.931, 'R': 0.914, 'F1': 0.922, 'IoU': 0.855}
+NEG2024_AB_03 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Crooked_Lake {'P': 0.956, 'R': 0.938, 'F1': 0.947, 'IoU': 0.9}
+Levellers_Creek {'P': 0.921, 'R': 0.991, 'F1': 0.955, 'IoU': 0.913}
+owl_creek {'P': 0.943, 'R': 0.871, 'F1': 0.905, 'IoU': 0.827}
+NBAC2023_AB_714 {'P': 0.888, 'R': 0.776, 'F1': 0.828, 'IoU': 0.706}
+NBAC2023_AB_317 {'P': 0.887, 'R': 0.992, 'F1': 0.937, 'IoU': 0.881}
+NBAC2023_AB_366 {'P': 0.974, 'R': 0.829, 'F1': 0.896, 'IoU': 0.811}
+NBAC2023_AB_685 {'P': 0.894, 'R': 0.966, 'F1': 0.929, 'IoU': 0.867}
+NBAC2023_AB_680 {'P': 0.939, 'R': 0.976, 'F1': 0.957, 'IoU': 0.918}
+NBAC2023_AB_722 {'P': 0.928, 'R': 0.875, 'F1': 0.901, 'IoU': 0.819}
+NBAC2023_AB_677 {'P': 0.968, 'R': 0.957, 'F1': 0.962, 'IoU': 0.927}
+NEG2023_AB_04 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+wrote /home/saad1/scratch/burn/runs/results/prithvi_lora_F-AB_test_windows.csv

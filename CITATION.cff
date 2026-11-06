@@ -1,15 +1,35 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite it as below."
-title: "burned-area-segmentation-western-canada"
+message: "If you use this repository, please cite it as below, together with the associated paper once published."
+title: "burned-area-segmentation-western-canada: code and results of a leave-one-province-out Sentinel-2 burned-area segmentation benchmark"
+version: "2.0.0"
+date-released: "2026-11-06"
 authors:
   - family-names: "Khan"
     given-names: "Muhammad S."
+    affiliation: "University of Prince Edward Island"
   - family-names: "Afzaal"
     given-names: "Hassan"
+    affiliation: "University of Prince Edward Island"
   - family-names: "Randhawa"
     given-names: "Gurjit S."
+    affiliation: "University of Guelph"
   - family-names: "Farooque"
     given-names: "Aitazaz A."
+    affiliation: "University of Prince Edward Island"
 repository-code: "https://github.com/Saadkhan32/burned-area-segmentation-western-canada"
 url: "https://github.com/Saadkhan32/burned-area-segmentation-western-canada"
 license: "MIT"
+keywords:
+  - burned area
+  - wildfire
+  - Sentinel-2
+  - semantic segmentation
+  - deep learning
+  - western Canada
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23996015"
+    description: "Dataset, reference rasters, fold file, per-window results and predicted maps (Zenodo)"
+  - type: doi
+    value: "10.5281/zenodo.23996017"
+    description: "Trained model checkpoints (Zenodo)"

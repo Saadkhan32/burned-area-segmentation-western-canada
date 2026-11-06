@@ -1,0 +1,71 @@
+unet_F-AB: train 83 windows, validation ['HEINZ', 'NBAC2024_BC_160', 'NBAC2023_BC_605', 'Greer_Creek', 'Tatuk_Lake', 'NBAC2024_SK_613', 'NBAC2023_SK_649'], test (never read) 45 | class weights [0.427 1.573] | load 80s
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 0.3478 val F1 mean 0.8992 pooled 0.9184 (15s) *
+ep   2 loss 0.1564 val F1 mean 0.8420 pooled 0.8900 (15s)
+ep   3 loss 0.1336 val F1 mean 0.8232 pooled 0.8808 (14s)
+ep   4 loss 0.1232 val F1 mean 0.9175 pooled 0.9226 (15s) *
+ep   5 loss 0.1180 val F1 mean 0.9224 pooled 0.9325 (15s) *
+ep   6 loss 0.1070 val F1 mean 0.8762 pooled 0.9140 (15s)
+ep   7 loss 0.1009 val F1 mean 0.9082 pooled 0.9288 (15s)
+ep   8 loss 0.0916 val F1 mean 0.9129 pooled 0.9278 (33s)
+ep   9 loss 0.0896 val F1 mean 0.9319 pooled 0.9353 (15s) *
+ep  10 loss 0.0915 val F1 mean 0.9249 pooled 0.9336 (14s)
+ep  11 loss 0.0817 val F1 mean 0.9254 pooled 0.9319 (15s)
+ep  12 loss 0.0809 val F1 mean 0.9181 pooled 0.9185 (15s)
+ep  13 loss 0.0844 val F1 mean 0.9317 pooled 0.9353 (15s)
+ep  14 loss 0.0903 val F1 mean 0.9196 pooled 0.9253 (15s)
+ep  15 loss 0.0880 val F1 mean 0.9246 pooled 0.9323 (15s)
+ep  16 loss 0.0817 val F1 mean 0.9292 pooled 0.9350 (15s)
+ep  17 loss 0.0864 val F1 mean 0.9216 pooled 0.9244 (14s)
+ep  18 loss 0.0867 val F1 mean 0.9117 pooled 0.9321 (15s)
+ep  19 loss 0.0814 val F1 mean 0.9282 pooled 0.9304 (15s)
+early stop at epoch 19 (no improvement for 10 epochs)
+done {'run': 'unet_F-AB', 'best_val_F1_mean_window': 0.9318820566998457, 'epochs_run': 19, 'best_pt_sha256': 'e02c5931759721b74a3553ee9cdd8f5f5a27a047c0c7f3b6c798f0a493b58e98', 'finished': '2026-10-14 02:35:06', 'wall_seconds': 384, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+Algar_Lake_Complex {'P': 0.861, 'R': 0.985, 'F1': 0.919, 'IoU': 0.85}
+Dillion_River_Fire {'P': 0.958, 'R': 0.979, 'F1': 0.968, 'IoU': 0.939}
+Pony_Creek {'P': 0.572, 'R': 0.985, 'F1': 0.724, 'IoU': 0.567}
+NBAC2022_AB_434 {'P': 0.902, 'R': 0.978, 'F1': 0.938, 'IoU': 0.883}
+NBAC2024_AB_148 {'P': 0.836, 'R': 0.986, 'F1': 0.905, 'IoU': 0.826}
+NBAC2022_AB_442 {'P': 0.915, 'R': 0.968, 'F1': 0.941, 'IoU': 0.888}
+NBAC2023_AB_2250 {'P': 0.956, 'R': 0.877, 'F1': 0.915, 'IoU': 0.843}
+NBAC2022_AB_436 {'P': 0.905, 'R': 0.955, 'F1': 0.929, 'IoU': 0.868}
+NBAC2023_AB_364 {'P': 0.993, 'R': 0.798, 'F1': 0.885, 'IoU': 0.793}
+NBAC2023_AB_683 {'P': 0.944, 'R': 0.886, 'F1': 0.914, 'IoU': 0.842}
+NEG2023_AB_01 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+NEG2023_AB_05 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+Betts {'P': 0.928, 'R': 0.939, 'F1': 0.933, 'IoU': 0.875}
+Eagle_fire {'P': 0.955, 'R': 0.869, 'F1': 0.91, 'IoU': 0.835}
+Rabbit_Lake {'P': 0.863, 'R': 0.99, 'F1': 0.922, 'IoU': 0.856}
+NBAC2023_AB_718 {'P': 0.99, 'R': 0.538, 'F1': 0.697, 'IoU': 0.535}
+NBAC2024_AB_133 {'P': 0.916, 'R': 0.995, 'F1': 0.954, 'IoU': 0.912}
+NBAC2024_AB_104 {'P': 0.956, 'R': 0.991, 'F1': 0.973, 'IoU': 0.948}
+NBAC2022_AB_438 {'P': 0.928, 'R': 0.956, 'F1': 0.942, 'IoU': 0.89}
+NBAC2022_AB_433 {'P': 0.923, 'R': 0.952, 'F1': 0.937, 'IoU': 0.881}
+NBAC2023_AB_693 {'P': 0.977, 'R': 0.985, 'F1': 0.981, 'IoU': 0.962}
+NBAC2023_AB_706 {'P': 0.915, 'R': 0.95, 'F1': 0.932, 'IoU': 0.873}
+NEG2024_AB_02 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+Cattail_Lake {'P': 0.908, 'R': 0.973, 'F1': 0.94, 'IoU': 0.886}
+Hoohey_Creek {'P': 0.894, 'R': 0.974, 'F1': 0.932, 'IoU': 0.873}
+Wentzel_Fire {'P': 0.934, 'R': 0.992, 'F1': 0.962, 'IoU': 0.927}
+NBAC2024_AB_155 {'P': 0.925, 'R': 0.991, 'F1': 0.957, 'IoU': 0.917}
+NBAC2023_AB_690 {'P': 0.916, 'R': 0.864, 'F1': 0.889, 'IoU': 0.801}
+NBAC2023_AB_322 {'P': 0.916, 'R': 0.964, 'F1': 0.94, 'IoU': 0.886}
+NBAC2022_AB_439 {'P': 0.955, 'R': 0.97, 'F1': 0.963, 'IoU': 0.928}
+NBAC2023_AB_713 {'P': 0.947, 'R': 0.833, 'F1': 0.886, 'IoU': 0.795}
+NBAC2024_AB_150 {'P': 0.941, 'R': 0.926, 'F1': 0.933, 'IoU': 0.875}
+NBAC2024_AB_118 {'P': 0.915, 'R': 0.923, 'F1': 0.919, 'IoU': 0.851}
+NEG2024_AB_03 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Crooked_Lake {'P': 0.942, 'R': 0.953, 'F1': 0.947, 'IoU': 0.9}
+Levellers_Creek {'P': 0.926, 'R': 0.983, 'F1': 0.954, 'IoU': 0.911}
+owl_creek {'P': 0.89, 'R': 0.879, 'F1': 0.884, 'IoU': 0.793}
+NBAC2023_AB_714 {'P': 0.856, 'R': 0.734, 'F1': 0.791, 'IoU': 0.654}
+NBAC2023_AB_317 {'P': 0.911, 'R': 0.987, 'F1': 0.947, 'IoU': 0.9}
+NBAC2023_AB_366 {'P': 0.948, 'R': 0.887, 'F1': 0.917, 'IoU': 0.846}
+NBAC2023_AB_685 {'P': 0.878, 'R': 0.971, 'F1': 0.922, 'IoU': 0.855}
+NBAC2023_AB_680 {'P': 0.929, 'R': 0.971, 'F1': 0.95, 'IoU': 0.904}
+NBAC2023_AB_722 {'P': 0.929, 'R': 0.791, 'F1': 0.855, 'IoU': 0.746}
+NBAC2023_AB_677 {'P': 0.929, 'R': 0.985, 'F1': 0.956, 'IoU': 0.916}
+NEG2023_AB_04 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+wrote /home/saad1/scratch/burn/runs/results/unet_F-AB_test_windows.csv

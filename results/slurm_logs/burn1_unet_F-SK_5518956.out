@@ -1,0 +1,75 @@
+unet_F-SK: train 83 windows, validation ['Pony_Creek', 'Murtle_Lake', 'NBAC2022_AB_436', 'NBAC2023_BC_850', 'NBAC2024_BC_247', 'Satah_Mountain', 'NBAC2023_AB_722'], test (never read) 45 | class weights [0.52 1.48] | load 66s
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 0.3541 val F1 mean 0.6772 pooled 0.6409 (17s) *
+ep   2 loss 0.1836 val F1 mean 0.8570 pooled 0.8673 (14s) *
+ep   3 loss 0.1696 val F1 mean 0.7713 pooled 0.7178 (14s)
+ep   4 loss 0.1464 val F1 mean 0.8030 pooled 0.8274 (14s)
+ep   5 loss 0.1330 val F1 mean 0.8701 pooled 0.8728 (36s) *
+ep   6 loss 0.1177 val F1 mean 0.8331 pooled 0.8516 (15s)
+ep   7 loss 0.1185 val F1 mean 0.8823 pooled 0.8872 (15s) *
+ep   8 loss 0.1143 val F1 mean 0.8890 pooled 0.8960 (15s) *
+ep   9 loss 0.1033 val F1 mean 0.8823 pooled 0.8821 (14s)
+ep  10 loss 0.1046 val F1 mean 0.8803 pooled 0.8845 (14s)
+ep  11 loss 0.1075 val F1 mean 0.8158 pooled 0.7969 (15s)
+ep  12 loss 0.1055 val F1 mean 0.8928 pooled 0.8994 (15s) *
+ep  13 loss 0.1008 val F1 mean 0.8978 pooled 0.9051 (14s) *
+ep  14 loss 0.1022 val F1 mean 0.8685 pooled 0.8666 (14s)
+ep  15 loss 0.0977 val F1 mean 0.8636 pooled 0.8642 (14s)
+ep  16 loss 0.1008 val F1 mean 0.8788 pooled 0.8821 (14s)
+ep  17 loss 0.0979 val F1 mean 0.8927 pooled 0.8973 (14s)
+ep  18 loss 0.0909 val F1 mean 0.8909 pooled 0.8981 (14s)
+ep  19 loss 0.0976 val F1 mean 0.8798 pooled 0.8831 (14s)
+ep  20 loss 0.0951 val F1 mean 0.8949 pooled 0.8991 (15s)
+ep  21 loss 0.0946 val F1 mean 0.8955 pooled 0.9010 (14s)
+ep  22 loss 0.0915 val F1 mean 0.8729 pooled 0.8779 (14s)
+ep  23 loss 0.0951 val F1 mean 0.8918 pooled 0.8946 (14s)
+early stop at epoch 23 (no improvement for 10 epochs)
+done {'run': 'unet_F-SK', 'best_val_F1_mean_window': 0.8978171739154436, 'epochs_run': 23, 'best_pt_sha256': '59592f4a0ada4bb3e36505ce0c6e8322ff9470ba2495b8c041bce0728066ee89', 'finished': '2026-10-14 02:36:42', 'wall_seconds': 427, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+HAMIL {'P': 0.938, 'R': 0.979, 'F1': 0.958, 'IoU': 0.92}
+LXLZS {'P': 0.875, 'R': 0.984, 'F1': 0.926, 'IoU': 0.863}
+NBAC2024_SK_347 {'P': 0.837, 'R': 0.986, 'F1': 0.905, 'IoU': 0.827}
+NBAC2024_SK_381 {'P': 0.907, 'R': 0.975, 'F1': 0.939, 'IoU': 0.886}
+NBAC2023_SK_607 {'P': 0.668, 'R': 0.995, 'F1': 0.799, 'IoU': 0.666}
+NBAC2023_SK_622 {'P': 0.925, 'R': 0.884, 'F1': 0.904, 'IoU': 0.825}
+NBAC2022_SK_472 {'P': 0.974, 'R': 0.967, 'F1': 0.971, 'IoU': 0.943}
+NBAC2024_SK_401 {'P': 0.398, 'R': 0.965, 'F1': 0.564, 'IoU': 0.393}
+NBAC2023_SK_618 {'P': 0.706, 'R': 0.986, 'F1': 0.823, 'IoU': 0.699}
+NEG2023_SK_03 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+BOLDING {'P': 0.864, 'R': 0.943, 'F1': 0.902, 'IoU': 0.821}
+HEINZ {'P': 0.735, 'R': 0.973, 'F1': 0.837, 'IoU': 0.72}
+SHAD {'P': 0.839, 'R': 0.971, 'F1': 0.9, 'IoU': 0.819}
+NBAC2024_SK_386 {'P': 0.873, 'R': 0.901, 'F1': 0.887, 'IoU': 0.797}
+NBAC2023_SK_645 {'P': 0.965, 'R': 0.967, 'F1': 0.966, 'IoU': 0.934}
+NBAC2022_SK_462 {'P': 0.904, 'R': 0.956, 'F1': 0.929, 'IoU': 0.868}
+NBAC2024_SK_350 {'P': 0.915, 'R': 0.975, 'F1': 0.944, 'IoU': 0.894}
+NBAC2022_SK_459 {'P': 0.785, 'R': 0.981, 'F1': 0.872, 'IoU': 0.773}
+NBAC2024_SK_349 {'P': 0.777, 'R': 0.996, 'F1': 0.873, 'IoU': 0.775}
+NBAC2024_SK_612 {'P': 0.814, 'R': 0.975, 'F1': 0.887, 'IoU': 0.797}
+NEG2023_SK_04 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+COWIE {'P': 0.918, 'R': 0.974, 'F1': 0.945, 'IoU': 0.896}
+JACKFISH {'P': 0.824, 'R': 0.984, 'F1': 0.897, 'IoU': 0.813}
+SHAW {'P': 0.749, 'R': 0.991, 'F1': 0.853, 'IoU': 0.744}
+NBAC2023_SK_642 {'P': 0.813, 'R': 0.957, 'F1': 0.879, 'IoU': 0.784}
+NBAC2023_SK_629 {'P': 0.895, 'R': 0.963, 'F1': 0.927, 'IoU': 0.865}
+NBAC2024_SK_375 {'P': 0.867, 'R': 0.985, 'F1': 0.922, 'IoU': 0.856}
+NBAC2024_SK_393 {'P': 0.865, 'R': 0.977, 'F1': 0.918, 'IoU': 0.848}
+NBAC2022_SK_451 {'P': 0.938, 'R': 0.969, 'F1': 0.953, 'IoU': 0.911}
+NBAC2023_SK_54 {'P': 0.923, 'R': 0.989, 'F1': 0.955, 'IoU': 0.914}
+NBAC2024_SK_367 {'P': 0.908, 'R': 0.954, 'F1': 0.93, 'IoU': 0.869}
+NEG2023_SK_01 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+NEG2022_SK_05 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+DIGBEE {'P': 0.966, 'R': 0.98, 'F1': 0.973, 'IoU': 0.947}
+KENNY {'P': 0.937, 'R': 0.961, 'F1': 0.949, 'IoU': 0.903}
+SMITH {'P': 0.842, 'R': 0.993, 'F1': 0.911, 'IoU': 0.837}
+NBAC2024_SK_402 {'P': 0.896, 'R': 0.99, 'F1': 0.941, 'IoU': 0.888}
+NBAC2024_SK_370 {'P': 0.713, 'R': 0.985, 'F1': 0.827, 'IoU': 0.705}
+NBAC2024_SK_342 {'P': 0.773, 'R': 0.976, 'F1': 0.863, 'IoU': 0.758}
+NBAC2024_SK_613 {'P': 0.898, 'R': 0.99, 'F1': 0.942, 'IoU': 0.89}
+NBAC2023_SK_649 {'P': 0.483, 'R': 0.998, 'F1': 0.651, 'IoU': 0.483}
+NBAC2024_SK_388 {'P': 0.83, 'R': 0.976, 'F1': 0.897, 'IoU': 0.814}
+NBAC2023_SK_637 {'P': 0.91, 'R': 0.935, 'F1': 0.922, 'IoU': 0.856}
+NBAC2024_SK_360 {'P': 0.888, 'R': 0.976, 'F1': 0.93, 'IoU': 0.869}
+NEG2023_SK_02 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+wrote /home/saad1/scratch/burn/runs/results/unet_F-SK_test_windows.csv

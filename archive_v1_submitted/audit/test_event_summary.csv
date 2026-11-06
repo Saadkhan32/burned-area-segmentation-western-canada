@@ -1,0 +1,12 @@
+test_set,role,n_chips,n_exact_copy_of_training_export_chip,n_overlap_only,n_no_match,matched_training_events,epsg
+"Betts (Table 7 ""Alberta"")",TABLE7_AB,40,40,0,0,Betts,32610
+"BOLDING (Table 7 ""British Columbia"")",TABLE7_BC,30,30,0,0,BOLDING,32613
+"rossmere lake (Table 7 ""Saskatchewan"")",TABLE7_SK,30,30,0,0,Roosemoore,32610
+Algar Lake Complex (earlier AB test),EARLIER,30,30,0,0,Algar Lake Complex,32612
+SHAW (earlier SK test),EARLIER,30,30,0,0,SHAW,32612
+Tomais Mountain (earlier BC test),EARLIER,30,30,0,0,Tomias Mountain,32609
+SMITH (earlier test),EARLIER,30,30,0,0,SMITH,32613
+Wentzel (earlier test),EARLIER,30,30,0,0,Wentzel Fire,32611
+SMITH with more images (earlier test),EARLIER,60,60,0,0,SMITH,32613
+Wentzel with more images (earlier test),EARLIER,60,60,0,0,Wentzel Fire,32611
+Algar lake complex v2 (earlier),EARLIER,40,40,0,0,Algar Lake Complex,32612

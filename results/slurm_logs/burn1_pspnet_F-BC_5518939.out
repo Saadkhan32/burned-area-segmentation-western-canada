@@ -1,0 +1,87 @@
+pspnet_F-BC: train 83 windows, validation ['Dillion_River_Fire', 'NBAC2022_AB_436', 'Rabbit_Lake', 'COWIE', 'NBAC2023_AB_722', 'NBAC2024_SK_613', 'NBAC2023_SK_649'], test (never read) 45 | class weights [0.527 1.473] | load 70s
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 0.2892 val F1 mean 0.8210 pooled 0.7971 (15s) *
+ep   2 loss 0.1561 val F1 mean 0.7947 pooled 0.7672 (14s)
+ep   3 loss 0.1455 val F1 mean 0.8694 pooled 0.8593 (14s) *
+ep   4 loss 0.1234 val F1 mean 0.9197 pooled 0.9215 (14s) *
+ep   5 loss 0.1130 val F1 mean 0.9132 pooled 0.9088 (14s)
+ep   6 loss 0.1059 val F1 mean 0.9092 pooled 0.9052 (13s)
+ep   7 loss 0.1031 val F1 mean 0.9260 pooled 0.9220 (15s) *
+ep   8 loss 0.0934 val F1 mean 0.9198 pooled 0.9177 (15s)
+ep   9 loss 0.0995 val F1 mean 0.9001 pooled 0.8972 (14s)
+ep  10 loss 0.0931 val F1 mean 0.8739 pooled 0.8576 (14s)
+ep  11 loss 0.0904 val F1 mean 0.8615 pooled 0.8275 (14s)
+ep  12 loss 0.0897 val F1 mean 0.8753 pooled 0.8868 (14s)
+ep  13 loss 0.0892 val F1 mean 0.8818 pooled 0.8868 (15s)
+ep  14 loss 0.0885 val F1 mean 0.9273 pooled 0.9263 (14s) *
+ep  15 loss 0.0807 val F1 mean 0.9028 pooled 0.9011 (14s)
+ep  16 loss 0.0863 val F1 mean 0.9042 pooled 0.8966 (15s)
+ep  17 loss 0.0794 val F1 mean 0.9079 pooled 0.8963 (14s)
+ep  18 loss 0.0813 val F1 mean 0.9302 pooled 0.9270 (14s) *
+ep  19 loss 0.0855 val F1 mean 0.8823 pooled 0.8914 (14s)
+ep  20 loss 0.0816 val F1 mean 0.8890 pooled 0.8744 (14s)
+ep  21 loss 0.0796 val F1 mean 0.8840 pooled 0.8851 (14s)
+ep  22 loss 0.0780 val F1 mean 0.9013 pooled 0.8933 (14s)
+ep  23 loss 0.0810 val F1 mean 0.9099 pooled 0.9030 (13s)
+ep  24 loss 0.0816 val F1 mean 0.8579 pooled 0.8638 (14s)
+ep  25 loss 0.0756 val F1 mean 0.9338 pooled 0.9286 (14s) *
+ep  26 loss 0.0860 val F1 mean 0.9301 pooled 0.9275 (14s)
+ep  27 loss 0.0787 val F1 mean 0.8783 pooled 0.8665 (14s)
+ep  28 loss 0.0781 val F1 mean 0.9288 pooled 0.9280 (14s)
+ep  29 loss 0.0741 val F1 mean 0.9181 pooled 0.9102 (14s)
+ep  30 loss 0.0774 val F1 mean 0.9075 pooled 0.9050 (13s)
+ep  31 loss 0.0871 val F1 mean 0.9173 pooled 0.9134 (14s)
+ep  32 loss 0.0739 val F1 mean 0.8767 pooled 0.8940 (14s)
+ep  33 loss 0.0745 val F1 mean 0.9116 pooled 0.9065 (13s)
+ep  34 loss 0.0768 val F1 mean 0.9027 pooled 0.8963 (14s)
+ep  35 loss 0.0745 val F1 mean 0.9084 pooled 0.9097 (14s)
+early stop at epoch 35 (no improvement for 10 epochs)
+done {'run': 'pspnet_F-BC', 'best_val_F1_mean_window': 0.933761292566291, 'epochs_run': 35, 'best_pt_sha256': '8d4e316cf93016d2b5badb15e5cef6c69564e402561f64bf1ac07ac77a23821a', 'finished': '2026-10-14 02:38:05', 'wall_seconds': 564, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+Anahim {'P': 0.945, 'R': 0.979, 'F1': 0.962, 'IoU': 0.926}
+Murtle_Lake {'P': 0.976, 'R': 0.962, 'F1': 0.969, 'IoU': 0.94}
+Tomias_Mountain {'P': 0.954, 'R': 0.98, 'F1': 0.967, 'IoU': 0.936}
+NBAC2024_BC_200 {'P': 0.96, 'R': 0.473, 'F1': 0.634, 'IoU': 0.464}
+NBAC2023_BC_907 {'P': 0.825, 'R': 0.904, 'F1': 0.863, 'IoU': 0.759}
+NBAC2023_BC_737 {'P': 0.764, 'R': 0.985, 'F1': 0.861, 'IoU': 0.755}
+NBAC2023_BC_839 {'P': 0.945, 'R': 0.959, 'F1': 0.952, 'IoU': 0.908}
+NBAC2023_BC_850 {'P': 0.79, 'R': 0.895, 'F1': 0.839, 'IoU': 0.723}
+NBAC2024_BC_247 {'P': 0.907, 'R': 0.991, 'F1': 0.947, 'IoU': 0.899}
+NBAC2023_BC_881 {'P': 0.819, 'R': 0.777, 'F1': 0.797, 'IoU': 0.663}
+NBAC2023_BC_726 {'P': 0.936, 'R': 0.975, 'F1': 0.955, 'IoU': 0.914}
+NEG2023_BC_04 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Bull_Canyone {'P': 0.879, 'R': 0.912, 'F1': 0.895, 'IoU': 0.81}
+Roosemoore {'P': 0.954, 'R': 0.909, 'F1': 0.931, 'IoU': 0.871}
+NBAC2023_BC_884 {'P': 0.909, 'R': 0.96, 'F1': 0.934, 'IoU': 0.876}
+NBAC2023_BC_908 {'P': 0.912, 'R': 0.989, 'F1': 0.949, 'IoU': 0.903}
+NBAC2023_BC_1464 {'P': 0.961, 'R': 0.709, 'F1': 0.816, 'IoU': 0.689}
+NBAC2024_BC_160 {'P': 0.926, 'R': 0.957, 'F1': 0.941, 'IoU': 0.889}
+NBAC2023_BC_797 {'P': 0.862, 'R': 0.996, 'F1': 0.924, 'IoU': 0.859}
+NBAC2024_BC_208 {'P': 0.901, 'R': 0.624, 'F1': 0.737, 'IoU': 0.584}
+NBAC2023_BC_889 {'P': 0.948, 'R': 0.991, 'F1': 0.969, 'IoU': 0.94}
+NBAC2023_BC_605 {'P': 0.811, 'R': 0.949, 'F1': 0.875, 'IoU': 0.777}
+NEG2023_BC_01 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+NEG2023_BC_05 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+Great_Beaver_Lake {'P': 0.939, 'R': 0.969, 'F1': 0.954, 'IoU': 0.911}
+Satah_Mountain {'P': 0.914, 'R': 0.991, 'F1': 0.951, 'IoU': 0.907}
+NBAC2023_BC_837 {'P': 0.913, 'R': 0.946, 'F1': 0.929, 'IoU': 0.868}
+NBAC2024_BC_206 {'P': 0.912, 'R': 0.986, 'F1': 0.948, 'IoU': 0.9}
+NBAC2023_BC_905 {'P': 0.784, 'R': 0.868, 'F1': 0.824, 'IoU': 0.701}
+NBAC2023_BC_861 {'P': 0.873, 'R': 0.968, 'F1': 0.918, 'IoU': 0.849}
+NBAC2023_BC_849 {'P': 0.964, 'R': 0.503, 'F1': 0.661, 'IoU': 0.494}
+NBAC2022_BC_607 {'P': 0.472, 'R': 0.952, 'F1': 0.631, 'IoU': 0.461}
+NBAC2024_BC_159 {'P': 0.757, 'R': 0.936, 'F1': 0.837, 'IoU': 0.72}
+NBAC2023_BC_808 {'P': 0.812, 'R': 0.953, 'F1': 0.877, 'IoU': 0.781}
+NEG2023_BC_02 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+Greer_Creek {'P': 0.898, 'R': 0.969, 'F1': 0.932, 'IoU': 0.873}
+Tatuk_Lake {'P': 0.902, 'R': 0.975, 'F1': 0.937, 'IoU': 0.881}
+NBAC2024_BC_230 {'P': 0.605, 'R': 0.991, 'F1': 0.752, 'IoU': 0.602}
+NBAC2023_BC_779 {'P': 0.964, 'R': 0.95, 'F1': 0.957, 'IoU': 0.918}
+NBAC2023_BC_820 {'P': 0.884, 'R': 0.994, 'F1': 0.935, 'IoU': 0.879}
+NBAC2023_BC_854 {'P': 0.914, 'R': 0.95, 'F1': 0.932, 'IoU': 0.872}
+NBAC2023_BC_774 {'P': 0.892, 'R': 0.992, 'F1': 0.94, 'IoU': 0.886}
+NBAC2024_BC_171 {'P': 0.37, 'R': 0.965, 'F1': 0.535, 'IoU': 0.365}
+NBAC2024_BC_193 {'P': 0.862, 'R': 0.787, 'F1': 0.823, 'IoU': 0.699}
+NEG2023_BC_03 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+wrote /home/saad1/scratch/burn/runs/results/pspnet_F-BC_test_windows.csv

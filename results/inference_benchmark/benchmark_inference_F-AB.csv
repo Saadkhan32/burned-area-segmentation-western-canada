@@ -1,0 +1,30 @@
+model,run,params_M,batch,precision,stride,n_windows,s_per_window,tiles_per_s,Mpx_per_s,gpu_mem_GB,device
+NBR<0,-,,,-,-,5,0.0012,,3392.9,,cpu (numpy)
+deeplabv3,deeplabv3_F-AB,39.7,16,fp16 autocast,128,5,0.74,317.9,5.65,0.76,NVIDIA A100-SXM4-40GB
+deeplabv3,deeplabv3_F-AB,39.7,16,fp16 autocast,256,5,0.32,215.2,12.98,0.76,NVIDIA A100-SXM4-40GB
+deeplabv3_C2,deeplabv3_F-AB_C2,39.7,16,fp16 autocast,128,5,0.72,325.1,5.78,0.76,NVIDIA A100-SXM4-40GB
+deeplabv3_C2,deeplabv3_F-AB_C2,39.7,16,fp16 autocast,256,5,0.29,236.6,14.27,0.76,NVIDIA A100-SXM4-40GB
+deeplabv3plus,deeplabv3plus_F-AB,26.7,16,fp16 autocast,128,5,0.66,357.1,6.35,0.66,NVIDIA A100-SXM4-40GB
+deeplabv3plus,deeplabv3plus_F-AB,26.7,16,fp16 autocast,256,5,0.33,208.9,12.6,0.66,NVIDIA A100-SXM4-40GB
+mask2former,mask2former_F-AB,215.5,16,fp16 autocast,128,5,1.69,138.3,2.46,3.42,NVIDIA A100-SXM4-40GB
+mask2former,mask2former_F-AB,215.5,16,fp16 autocast,256,5,0.58,118.5,7.15,3.42,NVIDIA A100-SXM4-40GB
+prithvi,prithvi_F-AB,324.2,16,fp16 autocast,128,5,0.88,266.9,4.74,3.76,NVIDIA A100-SXM4-40GB
+prithvi,prithvi_F-AB,324.2,16,fp16 autocast,256,5,0.34,202.0,12.19,3.76,NVIDIA A100-SXM4-40GB
+prithvi_lora,prithvi_lora_F-AB,325.0,16,fp16 autocast,128,5,0.93,251.3,4.47,4.46,NVIDIA A100-SXM4-40GB
+prithvi_lora,prithvi_lora_F-AB,325.0,16,fp16 autocast,256,5,0.35,195.2,11.78,4.46,NVIDIA A100-SXM4-40GB
+pspnet,pspnet_F-AB,24.3,16,fp16 autocast,128,5,0.47,497.4,8.84,2.98,NVIDIA A100-SXM4-40GB
+pspnet,pspnet_F-AB,24.3,16,fp16 autocast,256,5,0.2,337.9,20.39,2.98,NVIDIA A100-SXM4-40GB
+pspnet_C2,pspnet_F-AB_C2,24.3,16,fp16 autocast,128,5,0.47,499.8,8.88,2.98,NVIDIA A100-SXM4-40GB
+pspnet_C2,pspnet_F-AB_C2,24.3,16,fp16 autocast,256,5,0.2,350.1,21.12,2.98,NVIDIA A100-SXM4-40GB
+samlora,samlora_F-AB,91.5,16,fp16 autocast,128,5,7.9,29.7,0.53,24.45,NVIDIA A100-SXM4-40GB
+samlora,samlora_F-AB,91.5,16,fp16 autocast,256,5,2.39,28.9,1.74,24.45,NVIDIA A100-SXM4-40GB
+segformer,segformer_F-AB,24.7,16,fp16 autocast,128,5,0.65,358.2,6.37,3.61,NVIDIA A100-SXM4-40GB
+segformer,segformer_F-AB,24.7,16,fp16 autocast,256,5,0.36,192.5,11.61,3.61,NVIDIA A100-SXM4-40GB
+terramind,terramind_F-AB,101.7,16,fp16 autocast,128,5,0.55,425.0,7.55,3.95,NVIDIA A100-SXM4-40GB
+terramind,terramind_F-AB,101.7,16,fp16 autocast,256,5,0.22,311.9,18.82,3.95,NVIDIA A100-SXM4-40GB
+unet,unet_F-AB,32.5,16,fp16 autocast,128,5,0.53,441.4,7.85,3.36,NVIDIA A100-SXM4-40GB
+unet,unet_F-AB,32.5,16,fp16 autocast,256,5,0.22,319.3,19.27,3.36,NVIDIA A100-SXM4-40GB
+unet_C2,unet_F-AB_C2,32.5,16,fp16 autocast,128,5,0.53,443.5,7.88,3.36,NVIDIA A100-SXM4-40GB
+unet_C2,unet_F-AB_C2,32.5,16,fp16 autocast,256,5,0.22,319.1,19.25,3.36,NVIDIA A100-SXM4-40GB
+upernet_convnext,upernet_convnext_F-AB,37.1,16,fp16 autocast,128,5,0.57,413.7,7.35,3.9,NVIDIA A100-SXM4-40GB
+upernet_convnext,upernet_convnext_F-AB,37.1,16,fp16 autocast,256,5,0.33,206.9,12.48,3.9,NVIDIA A100-SXM4-40GB

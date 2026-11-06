@@ -1,0 +1,9 @@
+{
+ "run": "prithvi_lora_F-BC",
+ "best_val_F1_mean_window": 0.9479868529641784,
+ "epochs_run": 35,
+ "best_pt_sha256": "47678d86bb99c2f0ecbe6f1d5ccc41a250d50c985898b221b1252b9d26ef605a",
+ "finished": "2026-10-14 02:54:36",
+ "wall_seconds": 935,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

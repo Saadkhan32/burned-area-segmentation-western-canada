@@ -1,0 +1,26 @@
+Comparison,A,B,n windows,Mean F1 difference (A - B),95 % CI,Windows A better,p (sign-flip),"p (Holm, within this table)"
+model vs NBR < 0 rule,Mask2Former (Swin-L),NBR < 0 rule,120,0.2732,+0.2406 to +0.3046,118,< 0.001,< 0.001
+model vs NBR < 0 rule,"Prithvi-EO-2.0, LoRA",NBR < 0 rule,120,0.271,+0.2371 to +0.3023,117,< 0.001,< 0.001
+model vs NBR < 0 rule,SegFormer (MiT-B2),NBR < 0 rule,120,0.271,+0.2385 to +0.3028,117,< 0.001,< 0.001
+model vs NBR < 0 rule,"U-Net, plain CE",NBR < 0 rule,120,0.2671,+0.2352 to +0.2976,118,< 0.001,< 0.001
+model vs NBR < 0 rule,UPerNet (ConvNeXt-T),NBR < 0 rule,120,0.2645,+0.2340 to +0.2939,119,< 0.001,< 0.001
+model vs NBR < 0 rule,DeepLabV3 (ResNet-50),NBR < 0 rule,120,0.2643,+0.2319 to +0.2962,117,< 0.001,< 0.001
+model vs NBR < 0 rule,U-Net (ResNet-50),NBR < 0 rule,120,0.2598,+0.2284 to +0.2904,118,< 0.001,< 0.001
+model vs NBR < 0 rule,PSPNet (ResNet-50),NBR < 0 rule,120,0.2573,+0.2260 to +0.2882,118,< 0.001,< 0.001
+model vs NBR < 0 rule,DeepLabV3+ (ResNet-50),NBR < 0 rule,120,0.2568,+0.2256 to +0.2870,117,< 0.001,< 0.001
+model vs NBR < 0 rule,SAM-LoRA (ViT-B),NBR < 0 rule,120,0.2549,+0.2217 to +0.2870,116,< 0.001,< 0.001
+model vs NBR < 0 rule,"DeepLabV3, plain CE",NBR < 0 rule,120,0.2495,+0.2172 to +0.2810,117,< 0.001,< 0.001
+model vs NBR < 0 rule,"PSPNet, plain CE",NBR < 0 rule,120,0.2442,+0.2110 to +0.2767,114,< 0.001,< 0.001
+model vs NBR < 0 rule,"Prithvi-EO-2.0, full fine-tuning",NBR < 0 rule,120,0.2323,+0.2029 to +0.2621,119,< 0.001,< 0.001
+model vs NBR < 0 rule,"TerraMind, full fine-tuning",NBR < 0 rule,120,0.2118,+0.1825 to +0.2408,113,< 0.001,< 0.001
+PSPNet vs DeepLabV3 (planned),PSPNet (ResNet-50),DeepLabV3 (ResNet-50),120,-0.007,-0.0158 to +0.0005,51,0.107,0.411
+ResNet-50 encoder-decoder mean vs transformer mean (planned),"mean of U-Net (ResNet-50), DeepLabV3 (ResNet-50), PSPNet (ResNet-50)","mean of SegFormer (MiT-B2), Mask2Former (Swin-L), SAM-LoRA (ViT-B), Prithvi-EO-2.0, full fine-tuning, Prithvi-EO-2.0, LoRA, TerraMind, full fine-tuning",120,0.0081,+0.0005 to +0.0171,57,0.052,0.367
+objective contrast: weighted CE + Dice vs plain CE,U-Net (ResNet-50),"U-Net, plain CE",120,-0.0074,-0.0154 to +0.0003,34,0.060,0.367
+objective contrast: weighted CE + Dice vs plain CE,DeepLabV3 (ResNet-50),"DeepLabV3, plain CE",120,0.0147,+0.0036 to +0.0284,54,0.016,0.130
+objective contrast: weighted CE + Dice vs plain CE,PSPNet (ResNet-50),"PSPNet, plain CE",120,0.0131,+0.0006 to +0.0282,59,0.069,0.367
+vs best-scoring configuration,"Prithvi-EO-2.0, LoRA",Mask2Former (Swin-L),120,-0.0022,-0.0093 to +0.0050,54,0.554,1.000
+vs best-scoring configuration,SegFormer (MiT-B2),Mask2Former (Swin-L),120,-0.0023,-0.0099 to +0.0053,58,0.571,1.000
+vs best-scoring configuration,UPerNet (ConvNeXt-T),Mask2Former (Swin-L),120,-0.0087,-0.0189 to +0.0018,46,0.103,0.411
+vs best-scoring configuration,DeepLabV3+ (ResNet-50),Mask2Former (Swin-L),120,-0.0164,-0.0241 to -0.0085,26,< 0.001,< 0.001
+vs best-scoring configuration,"Prithvi-EO-2.0, full fine-tuning",Mask2Former (Swin-L),120,-0.0409,-0.0603 to -0.0238,19,< 0.001,< 0.001
+vs best-scoring configuration,"TerraMind, full fine-tuning",Mask2Former (Swin-L),120,-0.0614,-0.0852 to -0.0422,14,< 0.001,< 0.001

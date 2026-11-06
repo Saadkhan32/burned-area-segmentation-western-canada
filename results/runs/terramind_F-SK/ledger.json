@@ -1,0 +1,9 @@
+{
+ "run": "terramind_F-SK",
+ "best_val_F1_mean_window": 0.8897726471555992,
+ "epochs_run": 19,
+ "best_pt_sha256": "9de9be978ec25d559edd7a208986c60626210121bc953747534736e2cf6f3c2b",
+ "finished": "2026-10-14 02:52:55",
+ "wall_seconds": 414,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

@@ -1,0 +1,96 @@
+mask2former_F-BC: train 83 windows, validation ['Dillion_River_Fire', 'NBAC2022_AB_436', 'Rabbit_Lake', 'COWIE', 'NBAC2023_AB_722', 'NBAC2024_SK_613', 'NBAC2023_SK_649'], test (never read) 45 | class weights [0.527 1.473] | load 68s
+[transformers] You passed `num_labels=2` which is incompatible to the `id2label` map of length `150`.
+Loading weights:   0%|          | 0/758 [00:00<?, ?it/s]Loading weights:  37%|███▋      | 278/758 [00:00<00:00, 2591.90it/s]Loading weights:  71%|███████   | 538/758 [00:00<00:00, 2552.53it/s]Loading weights: 100%|██████████| 758/758 [00:00<00:00, 2823.73it/s]
+[transformers] [1mMask2FormerForUniversalSegmentation LOAD REPORT[0m from: facebook/mask2former-swin-large-ade-semantic
+Key                                                                                                                      | Status     |                                                                                         
+-------------------------------------------------------------------------------------------------------------------------+------------+-----------------------------------------------------------------------------------------
+model.pixel_level_module.encoder.swin.encoder.layers.{0, 1, 2, 3}.blocks.{0...17}.attention.self.relative_position_index | UNEXPECTED |                                                                                         
+model.pixel_level_module.encoder.swin.layernorm.weight                                                                   | MISSING    |                                                                                         
+model.pixel_level_module.encoder.swin.layernorm.bias                                                                     | MISSING    |                                                                                         
+criterion.empty_weight                                                                                                   | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151]) vs model:torch.Size([3])          
+class_predictor.bias                                                                                                     | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151]) vs model:torch.Size([3])          
+class_predictor.weight                                                                                                   | MISMATCH   | Reinit due to size mismatch - ckpt: torch.Size([151, 256]) vs model:torch.Size([3, 256])
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+- MISMATCH:	ckpt weights were loaded, but they did not match the original empty weight shapes.
+/home/saad1/burn/drac/train.py:148: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 34.8670 val F1 mean 0.9015 pooled 0.9082 (83s) *
+ep   2 loss 30.4755 val F1 mean 0.9244 pooled 0.9211 (80s) *
+ep   3 loss 29.2431 val F1 mean 0.8920 pooled 0.8983 (79s)
+ep   4 loss 28.4886 val F1 mean 0.8292 pooled 0.8382 (79s)
+ep   5 loss 28.1916 val F1 mean 0.9359 pooled 0.9318 (81s) *
+ep   6 loss 26.3459 val F1 mean 0.9108 pooled 0.9176 (80s)
+ep   7 loss 26.6118 val F1 mean 0.9494 pooled 0.9462 (103s) *
+ep   8 loss 25.9406 val F1 mean 0.9289 pooled 0.9301 (79s)
+ep   9 loss 25.9576 val F1 mean 0.9309 pooled 0.9361 (79s)
+ep  10 loss 25.6819 val F1 mean 0.9417 pooled 0.9418 (79s)
+ep  11 loss 24.8745 val F1 mean 0.8988 pooled 0.9011 (79s)
+ep  12 loss 25.6106 val F1 mean 0.9390 pooled 0.9408 (79s)
+ep  13 loss 25.7324 val F1 mean 0.9419 pooled 0.9384 (79s)
+ep  14 loss 25.3858 val F1 mean 0.9426 pooled 0.9367 (78s)
+ep  15 loss 25.0771 val F1 mean 0.9449 pooled 0.9439 (79s)
+ep  16 loss 24.9685 val F1 mean 0.9510 pooled 0.9471 (81s) *
+ep  17 loss 24.7433 val F1 mean 0.9463 pooled 0.9421 (79s)
+ep  18 loss 25.6308 val F1 mean 0.9391 pooled 0.9371 (79s)
+ep  19 loss 25.1044 val F1 mean 0.9347 pooled 0.9403 (79s)
+ep  20 loss 24.0167 val F1 mean 0.9471 pooled 0.9443 (79s)
+ep  21 loss 24.4702 val F1 mean 0.9501 pooled 0.9457 (89s)
+ep  22 loss 25.0238 val F1 mean 0.9427 pooled 0.9433 (81s)
+ep  23 loss 24.9216 val F1 mean 0.9395 pooled 0.9388 (79s)
+ep  24 loss 25.3813 val F1 mean 0.9410 pooled 0.9419 (79s)
+ep  25 loss 23.9416 val F1 mean 0.9288 pooled 0.9298 (79s)
+ep  26 loss 24.7899 val F1 mean 0.9159 pooled 0.9269 (79s)
+early stop at epoch 26 (no improvement for 10 epochs)
+done {'run': 'mask2former_F-BC', 'best_val_F1_mean_window': 0.9510195339098336, 'epochs_run': 26, 'best_pt_sha256': '9599d6a8bcbd645fa4a5e3c5d3c6bec0beabfd0b04796967f4e21136cd7b19b7', 'finished': '2026-10-14 03:15:29', 'wall_seconds': 2179, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+Anahim {'P': 0.961, 'R': 0.975, 'F1': 0.968, 'IoU': 0.938}
+Murtle_Lake {'P': 0.989, 'R': 0.949, 'F1': 0.969, 'IoU': 0.939}
+Tomias_Mountain {'P': 0.981, 'R': 0.965, 'F1': 0.973, 'IoU': 0.948}
+NBAC2024_BC_200 {'P': 0.991, 'R': 0.209, 'F1': 0.345, 'IoU': 0.209}
+NBAC2023_BC_907 {'P': 0.936, 'R': 0.771, 'F1': 0.845, 'IoU': 0.732}
+NBAC2023_BC_737 {'P': 0.881, 'R': 0.955, 'F1': 0.917, 'IoU': 0.846}
+NBAC2023_BC_839 {'P': 0.961, 'R': 0.931, 'F1': 0.946, 'IoU': 0.897}
+NBAC2023_BC_850 {'P': 0.838, 'R': 0.85, 'F1': 0.844, 'IoU': 0.73}
+NBAC2024_BC_247 {'P': 0.929, 'R': 0.987, 'F1': 0.957, 'IoU': 0.918}
+NBAC2023_BC_881 {'P': 0.839, 'R': 0.784, 'F1': 0.811, 'IoU': 0.682}
+NBAC2023_BC_726 {'P': 0.97, 'R': 0.934, 'F1': 0.952, 'IoU': 0.908}
+NEG2023_BC_04 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Bull_Canyone {'P': 0.915, 'R': 0.866, 'F1': 0.89, 'IoU': 0.802}
+Roosemoore {'P': 0.98, 'R': 0.865, 'F1': 0.919, 'IoU': 0.85}
+NBAC2023_BC_884 {'P': 0.896, 'R': 0.929, 'F1': 0.912, 'IoU': 0.839}
+NBAC2023_BC_908 {'P': 0.952, 'R': 0.969, 'F1': 0.961, 'IoU': 0.924}
+NBAC2023_BC_1464 {'P': 0.963, 'R': 0.707, 'F1': 0.815, 'IoU': 0.688}
+NBAC2024_BC_160 {'P': 0.954, 'R': 0.96, 'F1': 0.957, 'IoU': 0.917}
+NBAC2023_BC_797 {'P': 0.929, 'R': 0.981, 'F1': 0.955, 'IoU': 0.913}
+NBAC2024_BC_208 {'P': 0.914, 'R': 0.73, 'F1': 0.811, 'IoU': 0.683}
+NBAC2023_BC_889 {'P': 0.954, 'R': 0.989, 'F1': 0.971, 'IoU': 0.944}
+NBAC2023_BC_605 {'P': 0.807, 'R': 0.918, 'F1': 0.859, 'IoU': 0.753}
+NEG2023_BC_01 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+NEG2023_BC_05 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+Great_Beaver_Lake {'P': 0.965, 'R': 0.943, 'F1': 0.954, 'IoU': 0.912}
+Satah_Mountain {'P': 0.934, 'R': 0.98, 'F1': 0.957, 'IoU': 0.917}
+NBAC2023_BC_837 {'P': 0.934, 'R': 0.897, 'F1': 0.915, 'IoU': 0.844}
+NBAC2024_BC_206 {'P': 0.956, 'R': 0.978, 'F1': 0.967, 'IoU': 0.936}
+NBAC2023_BC_905 {'P': 0.763, 'R': 0.88, 'F1': 0.818, 'IoU': 0.691}
+NBAC2023_BC_861 {'P': 0.91, 'R': 0.94, 'F1': 0.925, 'IoU': 0.861}
+NBAC2023_BC_849 {'P': 0.984, 'R': 0.469, 'F1': 0.635, 'IoU': 0.465}
+NBAC2022_BC_607 {'P': 0.491, 'R': 0.955, 'F1': 0.648, 'IoU': 0.48}
+NBAC2024_BC_159 {'P': 0.834, 'R': 0.926, 'F1': 0.878, 'IoU': 0.782}
+NBAC2023_BC_808 {'P': 0.89, 'R': 0.907, 'F1': 0.899, 'IoU': 0.816}
+NEG2023_BC_02 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+Greer_Creek {'P': 0.909, 'R': 0.962, 'F1': 0.934, 'IoU': 0.877}
+Tatuk_Lake {'P': 0.939, 'R': 0.935, 'F1': 0.937, 'IoU': 0.881}
+NBAC2024_BC_230 {'P': 0.899, 'R': 0.983, 'F1': 0.939, 'IoU': 0.886}
+NBAC2023_BC_779 {'P': 0.989, 'R': 0.808, 'F1': 0.889, 'IoU': 0.8}
+NBAC2023_BC_820 {'P': 0.845, 'R': 0.987, 'F1': 0.911, 'IoU': 0.836}
+NBAC2023_BC_854 {'P': 0.936, 'R': 0.887, 'F1': 0.911, 'IoU': 0.836}
+NBAC2023_BC_774 {'P': 0.946, 'R': 0.98, 'F1': 0.963, 'IoU': 0.928}
+NBAC2024_BC_171 {'P': 0.502, 'R': 0.896, 'F1': 0.643, 'IoU': 0.474}
+NBAC2024_BC_193 {'P': 0.966, 'R': 0.456, 'F1': 0.62, 'IoU': 0.449}
+NEG2023_BC_03 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+wrote /home/saad1/scratch/burn/runs/results/mask2former_F-BC_test_windows.csv

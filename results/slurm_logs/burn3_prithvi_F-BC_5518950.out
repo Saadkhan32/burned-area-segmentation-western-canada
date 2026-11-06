@@ -1,0 +1,107 @@
+prithvi_F-BC: train 83 windows, validation ['Dillion_River_Fire', 'NBAC2022_AB_436', 'Rabbit_Lake', 'COWIE', 'NBAC2023_AB_722', 'NBAC2024_SK_613', 'NBAC2023_SK_649'], test (never read) 45 | class weights [0.527 1.473] | load 69s
+/home/saad1/venv-burn/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+W1014 02:40:54.843000 1664535 torch/utils/flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 0.2638 val F1 mean 0.8719 pooled 0.8877 (35s) *
+ep   2 loss 0.1568 val F1 mean 0.8448 pooled 0.8276 (32s)
+ep   3 loss 0.1442 val F1 mean 0.8098 pooled 0.8209 (34s)
+ep   4 loss 0.1197 val F1 mean 0.8398 pooled 0.8728 (32s)
+ep   5 loss 0.1236 val F1 mean 0.8361 pooled 0.8451 (32s)
+ep   6 loss 0.1016 val F1 mean 0.8968 pooled 0.8984 (34s) *
+ep   7 loss 0.1114 val F1 mean 0.8766 pooled 0.8661 (32s)
+ep   8 loss 0.1067 val F1 mean 0.8559 pooled 0.8709 (32s)
+ep   9 loss 0.1177 val F1 mean 0.8619 pooled 0.8845 (32s)
+ep  10 loss 0.1065 val F1 mean 0.7987 pooled 0.7736 (32s)
+ep  11 loss 0.0938 val F1 mean 0.8752 pooled 0.8782 (32s)
+ep  12 loss 0.0992 val F1 mean 0.8397 pooled 0.8585 (32s)
+ep  13 loss 0.1048 val F1 mean 0.9046 pooled 0.9069 (34s) *
+ep  14 loss 0.0972 val F1 mean 0.9009 pooled 0.9037 (32s)
+ep  15 loss 0.0931 val F1 mean 0.8452 pooled 0.8647 (95s)
+ep  16 loss 0.0972 val F1 mean 0.8912 pooled 0.8863 (32s)
+ep  17 loss 0.1002 val F1 mean 0.8774 pooled 0.8686 (32s)
+ep  18 loss 0.0872 val F1 mean 0.8412 pooled 0.8577 (32s)
+ep  19 loss 0.0970 val F1 mean 0.8869 pooled 0.9048 (32s)
+ep  20 loss 0.0970 val F1 mean 0.9009 pooled 0.8964 (32s)
+ep  21 loss 0.0921 val F1 mean 0.8963 pooled 0.8971 (32s)
+ep  22 loss 0.0976 val F1 mean 0.9117 pooled 0.9120 (33s) *
+ep  23 loss 0.0952 val F1 mean 0.8836 pooled 0.9017 (32s)
+ep  24 loss 0.0934 val F1 mean 0.8717 pooled 0.8584 (32s)
+ep  25 loss 0.0890 val F1 mean 0.9171 pooled 0.9155 (34s) *
+ep  26 loss 0.0918 val F1 mean 0.8652 pooled 0.8808 (32s)
+ep  27 loss 0.0884 val F1 mean 0.8509 pooled 0.7972 (32s)
+ep  28 loss 0.0924 val F1 mean 0.8261 pooled 0.8423 (32s)
+ep  29 loss 0.0857 val F1 mean 0.8677 pooled 0.8843 (32s)
+ep  30 loss 0.0945 val F1 mean 0.9257 pooled 0.9277 (35s) *
+ep  31 loss 0.0954 val F1 mean 0.8989 pooled 0.9029 (32s)
+ep  32 loss 0.0888 val F1 mean 0.8626 pooled 0.8715 (32s)
+ep  33 loss 0.0813 val F1 mean 0.8953 pooled 0.8867 (32s)
+ep  34 loss 0.0867 val F1 mean 0.9189 pooled 0.9200 (32s)
+ep  35 loss 0.0822 val F1 mean 0.9107 pooled 0.9095 (32s)
+ep  36 loss 0.0834 val F1 mean 0.9184 pooled 0.9164 (33s)
+ep  37 loss 0.0835 val F1 mean 0.9218 pooled 0.9229 (33s)
+ep  38 loss 0.0864 val F1 mean 0.8931 pooled 0.9054 (32s)
+ep  39 loss 0.0805 val F1 mean 0.9286 pooled 0.9265 (35s) *
+ep  40 loss 0.0835 val F1 mean 0.8841 pooled 0.8895 (32s)
+ep  41 loss 0.0823 val F1 mean 0.9095 pooled 0.9028 (32s)
+ep  42 loss 0.0852 val F1 mean 0.9080 pooled 0.9010 (32s)
+ep  43 loss nan val F1 mean 0.0000 pooled 0.0000 (32s)
+ep  44 loss nan val F1 mean 0.0000 pooled 0.0000 (27s)
+ep  45 loss nan val F1 mean 0.0000 pooled 0.0000 (27s)
+ep  46 loss nan val F1 mean 0.0000 pooled 0.0000 (27s)
+ep  47 loss nan val F1 mean 0.0000 pooled 0.0000 (27s)
+ep  48 loss nan val F1 mean 0.0000 pooled 0.0000 (28s)
+ep  49 loss nan val F1 mean 0.0000 pooled 0.0000 (29s)
+early stop at epoch 49 (no improvement for 10 epochs)
+done {'run': 'prithvi_F-BC', 'best_val_F1_mean_window': 0.9286160364231291, 'epochs_run': 49, 'best_pt_sha256': '7f9c29855be04a97129858834bd7b432a164ce851d19bbc97a29f46b1c068302', 'finished': '2026-10-14 03:08:08', 'wall_seconds': 1714, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+/home/saad1/venv-burn/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+W1014 03:08:20.573000 1679383 torch/utils/flop_counter.py:113] triton not found; flop counting will not work for triton kernels
+Anahim {'P': 0.953, 'R': 0.977, 'F1': 0.965, 'IoU': 0.932}
+Murtle_Lake {'P': 0.98, 'R': 0.953, 'F1': 0.967, 'IoU': 0.935}
+Tomias_Mountain {'P': 0.965, 'R': 0.971, 'F1': 0.968, 'IoU': 0.938}
+NBAC2024_BC_200 {'P': 0.963, 'R': 0.659, 'F1': 0.783, 'IoU': 0.643}
+NBAC2023_BC_907 {'P': 0.719, 'R': 0.937, 'F1': 0.814, 'IoU': 0.686}
+NBAC2023_BC_737 {'P': 0.797, 'R': 0.968, 'F1': 0.874, 'IoU': 0.777}
+NBAC2023_BC_839 {'P': 0.948, 'R': 0.951, 'F1': 0.95, 'IoU': 0.904}
+NBAC2023_BC_850 {'P': 0.813, 'R': 0.853, 'F1': 0.833, 'IoU': 0.713}
+NBAC2024_BC_247 {'P': 0.942, 'R': 0.985, 'F1': 0.963, 'IoU': 0.929}
+NBAC2023_BC_881 {'P': 0.793, 'R': 0.773, 'F1': 0.783, 'IoU': 0.643}
+NBAC2023_BC_726 {'P': 0.936, 'R': 0.968, 'F1': 0.951, 'IoU': 0.907}
+NEG2023_BC_04 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Bull_Canyone {'P': 0.896, 'R': 0.756, 'F1': 0.82, 'IoU': 0.695}
+Roosemoore {'P': 0.983, 'R': 0.811, 'F1': 0.889, 'IoU': 0.8}
+NBAC2023_BC_884 {'P': 0.941, 'R': 0.924, 'F1': 0.932, 'IoU': 0.874}
+NBAC2023_BC_908 {'P': 0.938, 'R': 0.974, 'F1': 0.956, 'IoU': 0.915}
+NBAC2023_BC_1464 {'P': 0.966, 'R': 0.592, 'F1': 0.734, 'IoU': 0.579}
+NBAC2024_BC_160 {'P': 0.917, 'R': 0.79, 'F1': 0.849, 'IoU': 0.737}
+NBAC2023_BC_797 {'P': 0.894, 'R': 0.985, 'F1': 0.937, 'IoU': 0.882}
+NBAC2024_BC_208 {'P': 0.889, 'R': 0.74, 'F1': 0.808, 'IoU': 0.677}
+NBAC2023_BC_889 {'P': 0.94, 'R': 0.989, 'F1': 0.964, 'IoU': 0.93}
+NBAC2023_BC_605 {'P': 0.828, 'R': 0.89, 'F1': 0.858, 'IoU': 0.751}
+NEG2023_BC_01 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+NEG2023_BC_05 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+Great_Beaver_Lake {'P': 0.94, 'R': 0.964, 'F1': 0.952, 'IoU': 0.908}
+Satah_Mountain {'P': 0.928, 'R': 0.989, 'F1': 0.958, 'IoU': 0.919}
+NBAC2023_BC_837 {'P': 0.916, 'R': 0.936, 'F1': 0.925, 'IoU': 0.861}
+NBAC2024_BC_206 {'P': 0.886, 'R': 0.982, 'F1': 0.931, 'IoU': 0.871}
+NBAC2023_BC_905 {'P': 0.703, 'R': 0.873, 'F1': 0.779, 'IoU': 0.638}
+NBAC2023_BC_861 {'P': 0.774, 'R': 0.96, 'F1': 0.857, 'IoU': 0.749}
+NBAC2023_BC_849 {'P': 0.971, 'R': 0.443, 'F1': 0.608, 'IoU': 0.437}
+NBAC2022_BC_607 {'P': 0.523, 'R': 0.851, 'F1': 0.648, 'IoU': 0.479}
+NBAC2024_BC_159 {'P': 0.788, 'R': 0.903, 'F1': 0.841, 'IoU': 0.726}
+NBAC2023_BC_808 {'P': 0.817, 'R': 0.875, 'F1': 0.845, 'IoU': 0.731}
+NEG2023_BC_02 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+Greer_Creek {'P': 0.906, 'R': 0.959, 'F1': 0.932, 'IoU': 0.873}
+Tatuk_Lake {'P': 0.896, 'R': 0.972, 'F1': 0.932, 'IoU': 0.873}
+NBAC2024_BC_230 {'P': 0.649, 'R': 0.987, 'F1': 0.783, 'IoU': 0.643}
+NBAC2023_BC_779 {'P': 0.956, 'R': 0.943, 'F1': 0.949, 'IoU': 0.904}
+NBAC2023_BC_820 {'P': 0.911, 'R': 0.991, 'F1': 0.949, 'IoU': 0.904}
+NBAC2023_BC_854 {'P': 0.939, 'R': 0.845, 'F1': 0.889, 'IoU': 0.801}
+NBAC2023_BC_774 {'P': 0.94, 'R': 0.98, 'F1': 0.96, 'IoU': 0.923}
+NBAC2024_BC_171 {'P': 0.429, 'R': 0.862, 'F1': 0.573, 'IoU': 0.401}
+NBAC2024_BC_193 {'P': 0.944, 'R': 0.614, 'F1': 0.744, 'IoU': 0.592}
+NEG2023_BC_03 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+wrote /home/saad1/scratch/burn/runs/results/prithvi_F-BC_test_windows.csv

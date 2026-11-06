@@ -1,0 +1,101 @@
+upernet_convnext_F-SK: train 83 windows, validation ['Pony_Creek', 'Murtle_Lake', 'NBAC2022_AB_436', 'NBAC2023_BC_850', 'NBAC2024_BC_247', 'Satah_Mountain', 'NBAC2023_AB_722'], test (never read) 45 | class weights [0.52 1.48] | load 65s
+/home/saad1/burn/drac/train.py:148: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+/home/saad1/burn/drac/train.py:148: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /tmp/build_wheels_tmp.103000/python-3.11/torch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  torch.nn.utils.clip_grad_norm_(params, 1.0); scaler.step(opt); scaler.update(); sched.step(); losses.append(float(loss))
+ep   1 loss 0.2447 val F1 mean 0.7604 pooled 0.7677 (18s) *
+ep   2 loss 0.1741 val F1 mean 0.7334 pooled 0.7587 (15s)
+ep   3 loss 0.1541 val F1 mean 0.8824 pooled 0.8897 (15s) *
+ep   4 loss 0.1479 val F1 mean 0.8585 pooled 0.8615 (15s)
+ep   5 loss 0.1325 val F1 mean 0.7972 pooled 0.7901 (15s)
+ep   6 loss 0.1179 val F1 mean 0.8995 pooled 0.9056 (15s) *
+ep   7 loss 0.1121 val F1 mean 0.8772 pooled 0.8795 (15s)
+ep   8 loss 0.1061 val F1 mean 0.8839 pooled 0.8885 (15s)
+ep   9 loss 0.1034 val F1 mean 0.8966 pooled 0.8902 (14s)
+ep  10 loss 0.1118 val F1 mean 0.8572 pooled 0.8754 (15s)
+ep  11 loss 0.1003 val F1 mean 0.8880 pooled 0.8950 (15s)
+ep  12 loss 0.1024 val F1 mean 0.8994 pooled 0.9046 (14s)
+ep  13 loss 0.0949 val F1 mean 0.8983 pooled 0.9035 (15s)
+ep  14 loss 0.1007 val F1 mean 0.9094 pooled 0.9063 (15s) *
+ep  15 loss 0.0967 val F1 mean 0.8620 pooled 0.8504 (15s)
+ep  16 loss 0.0935 val F1 mean 0.8884 pooled 0.8922 (15s)
+ep  17 loss 0.0933 val F1 mean 0.9105 pooled 0.9169 (15s) *
+ep  18 loss 0.0905 val F1 mean 0.9109 pooled 0.9119 (15s)
+ep  19 loss 0.0855 val F1 mean 0.8928 pooled 0.9008 (15s)
+ep  20 loss 0.0830 val F1 mean 0.9143 pooled 0.9100 (15s) *
+ep  21 loss 0.0914 val F1 mean 0.8936 pooled 0.9012 (15s)
+ep  22 loss 0.0838 val F1 mean 0.8839 pooled 0.8898 (15s)
+ep  23 loss 0.0839 val F1 mean 0.8962 pooled 0.8995 (15s)
+ep  24 loss 0.0815 val F1 mean 0.8987 pooled 0.9031 (15s)
+ep  25 loss 0.0818 val F1 mean 0.9113 pooled 0.9091 (15s)
+ep  26 loss 0.0799 val F1 mean 0.9092 pooled 0.9061 (15s)
+ep  27 loss 0.0803 val F1 mean 0.9166 pooled 0.9133 (15s) *
+ep  28 loss 0.0803 val F1 mean 0.8900 pooled 0.8968 (14s)
+ep  29 loss 0.0782 val F1 mean 0.8903 pooled 0.8957 (15s)
+ep  30 loss 0.0810 val F1 mean 0.8798 pooled 0.8837 (14s)
+ep  31 loss 0.0820 val F1 mean 0.8951 pooled 0.9006 (15s)
+ep  32 loss 0.0815 val F1 mean 0.8985 pooled 0.9039 (15s)
+ep  33 loss 0.0776 val F1 mean 0.9001 pooled 0.8980 (15s)
+ep  34 loss 0.0757 val F1 mean 0.9062 pooled 0.9116 (15s)
+ep  35 loss 0.0762 val F1 mean 0.9095 pooled 0.9113 (15s)
+ep  36 loss 0.0794 val F1 mean 0.9162 pooled 0.9153 (15s)
+ep  37 loss 0.0749 val F1 mean 0.9177 pooled 0.9175 (15s) *
+ep  38 loss 0.0727 val F1 mean 0.8788 pooled 0.8843 (15s)
+ep  39 loss 0.0750 val F1 mean 0.8999 pooled 0.8994 (15s)
+ep  40 loss 0.0757 val F1 mean 0.9130 pooled 0.9122 (15s)
+ep  41 loss 0.0726 val F1 mean 0.8865 pooled 0.8928 (15s)
+ep  42 loss 0.0710 val F1 mean 0.9072 pooled 0.9038 (15s)
+ep  43 loss 0.0756 val F1 mean 0.9145 pooled 0.9121 (15s)
+ep  44 loss 0.0709 val F1 mean 0.8986 pooled 0.9073 (14s)
+ep  45 loss 0.0699 val F1 mean 0.8887 pooled 0.8927 (15s)
+ep  46 loss 0.0749 val F1 mean 0.8920 pooled 0.8960 (15s)
+ep  47 loss 0.0662 val F1 mean 0.8837 pooled 0.8897 (15s)
+early stop at epoch 47 (no improvement for 10 epochs)
+done {'run': 'upernet_convnext_F-SK', 'best_val_F1_mean_window': 0.9177292195690597, 'epochs_run': 47, 'best_pt_sha256': '2b3efe37bf2006330c1718864b75fc23bed80b0f5963736ed1da987db6d764ec', 'finished': '2026-10-14 02:55:19', 'wall_seconds': 761, 'gpu': 'NVIDIA A100-SXM4-40GB'}
+HAMIL {'P': 0.948, 'R': 0.983, 'F1': 0.965, 'IoU': 0.932}
+LXLZS {'P': 0.887, 'R': 0.992, 'F1': 0.936, 'IoU': 0.88}
+NBAC2024_SK_347 {'P': 0.884, 'R': 0.986, 'F1': 0.932, 'IoU': 0.873}
+NBAC2024_SK_381 {'P': 0.907, 'R': 0.978, 'F1': 0.941, 'IoU': 0.889}
+NBAC2023_SK_607 {'P': 0.898, 'R': 0.99, 'F1': 0.941, 'IoU': 0.889}
+NBAC2023_SK_622 {'P': 0.95, 'R': 0.928, 'F1': 0.939, 'IoU': 0.885}
+NBAC2022_SK_472 {'P': 0.971, 'R': 0.976, 'F1': 0.973, 'IoU': 0.948}
+NBAC2024_SK_401 {'P': 0.461, 'R': 0.964, 'F1': 0.624, 'IoU': 0.453}
+NBAC2023_SK_618 {'P': 0.89, 'R': 0.99, 'F1': 0.937, 'IoU': 0.882}
+NEG2023_SK_03 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+BOLDING {'P': 0.942, 'R': 0.933, 'F1': 0.937, 'IoU': 0.882}
+HEINZ {'P': 0.934, 'R': 0.977, 'F1': 0.955, 'IoU': 0.914}
+SHAD {'P': 0.904, 'R': 0.977, 'F1': 0.939, 'IoU': 0.886}
+NBAC2024_SK_386 {'P': 0.94, 'R': 0.936, 'F1': 0.938, 'IoU': 0.883}
+NBAC2023_SK_645 {'P': 0.962, 'R': 0.974, 'F1': 0.968, 'IoU': 0.938}
+NBAC2022_SK_462 {'P': 0.897, 'R': 0.981, 'F1': 0.937, 'IoU': 0.882}
+NBAC2024_SK_350 {'P': 0.959, 'R': 0.994, 'F1': 0.976, 'IoU': 0.954}
+NBAC2022_SK_459 {'P': 0.962, 'R': 0.985, 'F1': 0.973, 'IoU': 0.948}
+NBAC2024_SK_349 {'P': 0.95, 'R': 0.986, 'F1': 0.968, 'IoU': 0.937}
+NBAC2024_SK_612 {'P': 0.818, 'R': 0.98, 'F1': 0.892, 'IoU': 0.805}
+NEG2023_SK_04 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+COWIE {'P': 0.902, 'R': 0.985, 'F1': 0.942, 'IoU': 0.89}
+JACKFISH {'P': 0.953, 'R': 0.982, 'F1': 0.967, 'IoU': 0.936}
+SHAW {'P': 0.712, 'R': 0.992, 'F1': 0.829, 'IoU': 0.708}
+NBAC2023_SK_642 {'P': 0.95, 'R': 0.969, 'F1': 0.96, 'IoU': 0.922}
+NBAC2023_SK_629 {'P': 0.916, 'R': 0.967, 'F1': 0.941, 'IoU': 0.888}
+NBAC2024_SK_375 {'P': 0.871, 'R': 0.974, 'F1': 0.919, 'IoU': 0.851}
+NBAC2024_SK_393 {'P': 0.893, 'R': 0.986, 'F1': 0.937, 'IoU': 0.882}
+NBAC2022_SK_451 {'P': 0.963, 'R': 0.969, 'F1': 0.966, 'IoU': 0.934}
+NBAC2023_SK_54 {'P': 0.935, 'R': 0.988, 'F1': 0.961, 'IoU': 0.924}
+NBAC2024_SK_367 {'P': 0.917, 'R': 0.974, 'F1': 0.944, 'IoU': 0.895}
+NEG2023_SK_01 {'P': 0.0, 'R': nan, 'F1': 0.0, 'IoU': 0.0}
+NEG2022_SK_05 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+DIGBEE {'P': 0.976, 'R': 0.981, 'F1': 0.979, 'IoU': 0.959}
+KENNY {'P': 0.915, 'R': 0.982, 'F1': 0.948, 'IoU': 0.9}
+SMITH {'P': 0.835, 'R': 0.997, 'F1': 0.908, 'IoU': 0.832}
+NBAC2024_SK_402 {'P': 0.882, 'R': 0.995, 'F1': 0.935, 'IoU': 0.878}
+NBAC2024_SK_370 {'P': 0.835, 'R': 0.988, 'F1': 0.905, 'IoU': 0.826}
+NBAC2024_SK_342 {'P': 0.799, 'R': 0.982, 'F1': 0.881, 'IoU': 0.788}
+NBAC2024_SK_613 {'P': 0.885, 'R': 0.991, 'F1': 0.935, 'IoU': 0.877}
+NBAC2023_SK_649 {'P': 0.595, 'R': 0.997, 'F1': 0.745, 'IoU': 0.594}
+NBAC2024_SK_388 {'P': 0.895, 'R': 0.979, 'F1': 0.935, 'IoU': 0.878}
+NBAC2023_SK_637 {'P': 0.907, 'R': 0.941, 'F1': 0.923, 'IoU': 0.858}
+NBAC2024_SK_360 {'P': 0.908, 'R': 0.986, 'F1': 0.946, 'IoU': 0.897}
+NEG2023_SK_02 {'P': nan, 'R': nan, 'F1': nan, 'IoU': nan}
+wrote /home/saad1/scratch/burn/runs/results/upernet_convnext_F-SK_test_windows.csv

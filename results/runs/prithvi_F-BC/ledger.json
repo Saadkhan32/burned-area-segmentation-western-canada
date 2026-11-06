@@ -1,0 +1,9 @@
+{
+ "run": "prithvi_F-BC",
+ "best_val_F1_mean_window": 0.9286160364231291,
+ "epochs_run": 49,
+ "best_pt_sha256": "7f9c29855be04a97129858834bd7b432a164ce851d19bbc97a29f46b1c068302",
+ "finished": "2026-10-14 03:08:08",
+ "wall_seconds": 1714,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

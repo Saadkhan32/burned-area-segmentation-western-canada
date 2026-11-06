@@ -1,0 +1,9 @@
+{
+ "run": "upernet_convnext_F-BC",
+ "best_val_F1_mean_window": 0.9454541225010162,
+ "epochs_run": 30,
+ "best_pt_sha256": "41a991ce76f39016d5dd85d96f297b4699a648cb7edb4ede7831d697015c0b99",
+ "finished": "2026-10-14 02:38:14",
+ "wall_seconds": 573,
+ "gpu": "NVIDIA A100-SXM4-40GB"
+}

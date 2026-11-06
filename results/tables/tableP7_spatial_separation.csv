@@ -1,0 +1,4 @@
+Fold,Test windows,Development windows,Nearest development window to a test window (km),Median nearest distance (km),Test windows within 25 km of a development window,Test windows within 50 km
+F-AB,45,90,33.4,170.0,0,6
+F-BC,45,90,53.3,411.2,0,0
+F-SK,45,90,33.4,245.4,0,5

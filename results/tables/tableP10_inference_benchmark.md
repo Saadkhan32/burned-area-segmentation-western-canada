@@ -1,0 +1,17 @@
+| Model | Parameters (M) | Time per window, stride 128 (s) | Time per window, stride 256 (s) | Throughput, stride 128 (Mpx/s) | Peak GPU memory (GB) |
+|---|---|---|---|---|---|
+| U-Net (ResNet-50) | 32.5 | 0.53 | 0.22 | 7.8 | 3.4 |
+| DeepLabV3 (ResNet-50) | 39.7 | 0.74 | 0.32 | 5.7 | 0.8 |
+| PSPNet (ResNet-50) | 24.3 | 0.47 | 0.20 | 8.8 | 3.0 |
+| DeepLabV3+ (ResNet-50) | 26.7 | 0.66 | 0.33 | 6.3 | 0.7 |
+| UPerNet (ConvNeXt-T) | 37.1 | 0.57 | 0.33 | 7.3 | 3.9 |
+| SAM-LoRA (ViT-B) | 91.5 | 7.90 | 2.39 | 0.5 | 24.4 |
+| Mask2Former (Swin-L) | 215.5 | 1.69 | 0.58 | 2.5 | 3.4 |
+| SegFormer (MiT-B2) | 24.7 | 0.65 | 0.36 | 6.4 | 3.6 |
+| Prithvi-EO-2.0, full fine-tuning | 324.2 | 0.88 | 0.34 | 4.7 | 3.8 |
+| Prithvi-EO-2.0, LoRA | 325.0 | 0.93 | 0.35 | 4.5 | 4.5 |
+| TerraMind, full fine-tuning | 101.7 | 0.55 | 0.22 | 7.5 | 4.0 |
+| U-Net, plain CE | 32.5 | 0.53 | 0.22 | 7.9 | 3.4 |
+| DeepLabV3, plain CE | 39.7 | 0.72 | 0.29 | 5.8 | 0.8 |
+| PSPNet, plain CE | 24.3 | 0.47 | 0.20 | 8.9 | 3.0 |
+| NBR < 0 rule (CPU, NumPy) | - | 0.0012 | - | 3393 | - |
